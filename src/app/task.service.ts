@@ -14,4 +14,16 @@ export class TaskService {
   getAllTasks(): Observable<TaskDTO[]> {
     return this.http.get<TaskDTO[]>(this.apiUrl);
   }
+
+  createTask(task: TaskDTO): Observable<TaskDTO> {
+    return this.http.post<TaskDTO>(this.apiUrl + '/create', task);
+  }
+
+  updateTask(task: TaskDTO): Observable<TaskDTO> {
+    return this.http.put<TaskDTO>(`${this.apiUrl}/${task.taskId}`, task);
+  }
+
+  deleteTask(taskId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${taskId}`);
+  }
 }

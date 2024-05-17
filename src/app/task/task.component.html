@@ -1,1 +1,121 @@
-<p>task works!</p>
+<div class="task-container">
+  <h2>Tasks</h2>
+
+  <!-- Scrollable div to display tasks -->
+  <div class="task-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Deadline</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.taskName }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.deadline }}</td>
+          <td>
+            <button (click)="editTask(task)">Edit</button>
+            <button (click)="deleteTask(task.taskId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Button to show add task form -->
+  <button class="add-task-btn" (click)="showForm = !showForm">Add Task</button>
+
+  <!-- Form to add new task -->
+  <form *ngIf="showForm" (ngSubmit)="addTask()">
+    <div>
+      <label for="taskName">Task Name:</label>
+      <input
+        type="text"
+        id="taskName"
+        [(ngModel)]="newTask.taskName"
+        name="taskName"
+        required
+      />
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="newTask.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+    <div>
+      <label for="status">Status:</label>
+      <select id="status" [(ngModel)]="newTask.status" name="status" required>
+        <option value="BACKLOG">BACKLOG</option>
+        <option value="ANALYSIS_WIP">ANALYSIS_WIP</option>
+        <option value="DEVELOPMENT_WIP">DEVELOPMENT_WIP</option>
+        <option value="TESTING_WIP">TESTING_WIP</option>
+        <option value="PRODUCTION_ACCEPTANCE">PRODUCTION_ACCEPTANCE</option>
+        <option value="DEFFECT_RAISED">DEFFECT_RAISED</option>
+      </select>
+    </div>
+    <div>
+      <label for="priority">Priority:</label>
+      <select
+        id="priority"
+        [(ngModel)]="newTask.priority"
+        name="priority"
+        required
+      >
+        <option value="LOW">Low</option>
+        <option value="MEDIUM">Medium</option>
+        <option value="HIGH">High</option>
+      </select>
+    </div>
+    <div>
+      <label for="assignedUser">Assigne to User:</label>
+      <select
+        id="assignedUser"
+        [(ngModel)]="newTask.assignedUserId"
+        name="assignedUser"
+        required
+      >
+        <option *ngFor="let user of users" [value]="user.userId">
+          {{ user.username }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="project">Project:</label>
+      <select
+        id="project"
+        [(ngModel)]="newTask.projectId"
+        name="project"
+        required
+      >
+        <option *ngFor="let project of projects" [value]="project.projectId">
+          {{ project.projectName }}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label for="deadlineDate">Deadline Date:</label>
+      <input
+        type="date"
+        id="deadlineDate"
+        [(ngModel)]="deadlineDate"
+        name="deadlineDate"
+        required
+      />
+    </div>
+
+    <button type="submit">Add Task</button>
+  </form>
+</div>

@@ -14,4 +14,24 @@ export class ProjectService {
   getAllProjects(): Observable<ProjectDTO[]> {
     return this.http.get<ProjectDTO[]>(this.apiUrl);
   }
+
+  getProjectsByManagerId(id: number): Observable<ProjectDTO[]> {
+    console.log(`http://localhost:9090/t-manager/api/projects/managerid/${id}`);
+    return this.http.get<ProjectDTO[]>(`${this.apiUrl}/managerid/${id}`);
+  }
+
+  createProject(project: ProjectDTO): Observable<ProjectDTO> {
+    return this.http.post<ProjectDTO>(`${this.apiUrl}/create`, project);
+  }
+
+  updateProject(project: ProjectDTO): Observable<ProjectDTO> {
+    return this.http.put<ProjectDTO>(
+      `${this.apiUrl}/${project.projectId}`,
+      project
+    );
+  }
+
+  deleteProject(projectId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${projectId}`);
+  }
 }

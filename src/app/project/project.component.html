@@ -1,1 +1,90 @@
-<p>project works!</p>
+<div class="project-container">
+  <h2>Projects</h2>
+
+  <!-- Scrollable div to display projects -->
+  <div class="project-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>{{ project.projectName }}</td>
+          <td>{{ project.description }}</td>
+          <td>{{ project.startDate }}</td>
+          <td>{{ project.endDate }}</td>
+          <td>
+            <button (click)="editProject(project)">Edit</button>
+            <button (click)="deleteProject(project.projectId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Button to show add project form -->
+  <button class="add-project-btn" (click)="getData()">Add Project</button>
+
+  <!-- Form to add new project -->
+  <form *ngIf="showForm" (ngSubmit)="addProject()">
+    <div>
+      <label for="projectName">Project Name:</label>
+      <input
+        type="text"
+        id="projectName"
+        [(ngModel)]="newProject.projectName"
+        name="projectName"
+        required
+      />
+    </div>
+    <div>
+      <label for="managerId">Assigne to Manager :</label>
+      <select
+        id="managerId"
+        [(ngModel)]="newProject.managerId"
+        name="managerId"
+        required
+      >
+        <option *ngFor="let user of managersList" [value]="user.userId">
+          {{ user.username }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="newProject.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+    <div>
+      <label for="startDate">Start Date:</label>
+      <input
+        type="date"
+        id="startDate"
+        [(ngModel)]="newProject.startDate"
+        name="startDate"
+        required
+      />
+    </div>
+    <div>
+      <label for="endDate">End Date:</label>
+      <input
+        type="date"
+        id="endDate"
+        [(ngModel)]="newProject.endDate"
+        name="endDate"
+        required
+      />
+    </div>
+    <button type="submit">Add Project</button>
+  </form>
+</div>

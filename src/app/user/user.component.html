@@ -1,21 +1,76 @@
-<div class="container">
+<div class="user-container">
   <h2>Users</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>User ID</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Role</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.userId }}</td>
-        <td>{{ user.username }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.role }}</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <!-- Scrollable div to display users -->
+  <div class="user-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button (click)="editUser(user)">Edit</button>
+            <button (click)="deleteUser(user.userId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Button to show add user form -->
+  <button class="add-user-btn" (click)="showForm = !showForm">Add User</button>
+
+  <!-- Form to add new user -->
+  <form *ngIf="showForm" (ngSubmit)="addUser()">
+    <div>
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        [(ngModel)]="newUser.username"
+        name="username"
+        required
+      />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="newUser.email"
+        name="email"
+        required
+      />
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input
+        type="text"
+        id="password"
+        [(ngModel)]="newUser.password"
+        name="password"
+        required
+      />
+    </div>
+    <div>
+      <label for="role">Role:</label>
+      <input
+        type="text"
+        id="role"
+        [(ngModel)]="newUser.role"
+        name="role"
+        required
+      />
+    </div>
+    <button type="submit">Add User</button>
+  </form>
 </div>

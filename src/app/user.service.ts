@@ -7,11 +7,35 @@ import { UserDTO } from './dto/user.dto';
   providedIn: 'root',
 })
 export class UserService {
+  getUsersById() {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = 'http://localhost:9090/t-manager/api/users';
 
   constructor(private http: HttpClient) {}
 
   getAllUsers(): Observable<UserDTO[]> {
     return this.http.get<UserDTO[]>(this.apiUrl);
+  }
+
+  getUserById(id: number): Observable<UserDTO> {
+    return this.http.get<UserDTO>(`${this.apiUrl}/id/${id}`);
+  }
+
+  getUsersByRole(role: String): Observable<UserDTO[]> {
+    console.log(`user service role :- ${role}`);
+    return this.http.get<UserDTO[]>(`${this.apiUrl}/role/PROJECT_MANAGER`);
+  }
+
+  createUser(user: UserDTO): Observable<UserDTO> {
+    return this.http.post<UserDTO>(`${this.apiUrl}/register`, user);
+  }
+
+  updateUser(user: UserDTO): Observable<UserDTO> {
+    return this.http.put<UserDTO>(`${this.apiUrl}/${user.userId}`, user);
+  }
+
+  deleteUser(userId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${userId}`);
   }
 }

@@ -15,11 +15,16 @@ import { UserService } from '../user.service';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
-  users: UserDTO[] = [];
+  managersList: UserDTO[] = [];
+  assigneeList: UserDTO[] = [];
   tasks: TaskDTO[] = [];
   projects: ProjectDTO[] = [];
   currentSection: string = 'users'; // Default section
-
+  selectedProject: ProjectDTO | null = null;
+  selectedProjectsManager: UserDTO | null = null;
+  selectedUser: UserDTO | null = null;
+  selectedUsersProject: ProjectDTO[] | null = null;
+  role = 'PRJECTMANAGER';
   constructor(
     private userService: UserService,
     private taskService: TaskService,
@@ -33,9 +38,10 @@ export class HomepageComponent implements OnInit {
   }
 
   loadUsers(): void {
-    this.userService.getAllUsers().subscribe((users) => {
-      this.users = users;
-      console.log('Users list:', users);
+    //this.role = 'PROJECT_MANAGER';
+    this.userService.getUsersByRole(this.role).subscribe((users) => {
+      this.managersList = users;
+      console.log('Manager list:', users);
     });
   }
 
@@ -55,5 +61,27 @@ export class HomepageComponent implements OnInit {
 
   showSection(section: string): void {
     this.currentSection = section;
+  }
+  showProjectDetails(project: ProjectDTO): void {
+    this.selectedProject = project;
+    this.userService
+      .getUserById(this.selectedProject.managerId)
+      .subscribe((user) => {
+        this.selectedProjectsManager = user;
+      });
+    this.selectedUser = null; // Reset selected user
+  }
+
+  showManagerDetails(user: UserDTO): void {
+    this.selectedUser = user;
+    // selectedUsersProject;
+    console.log('Project list :- ' + this.selectedUsersProject);
+    this.projectService
+      .getProjectsByManagerId(this.selectedUser.userId)
+      .subscribe((project) => {
+        this.selectedUsersProject = project;
+      });
+    console.log('User Project list :- ' + this.selectedUsersProject);
+    this.selectedProject = null; // Reset selected project
   }
 }
