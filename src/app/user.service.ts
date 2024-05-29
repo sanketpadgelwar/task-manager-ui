@@ -24,7 +24,7 @@ export class UserService {
 
   getUsersByRole(role: String): Observable<UserDTO[]> {
     console.log(`user service role :- ${role}`);
-    return this.http.get<UserDTO[]>(`${this.apiUrl}/role/PROJECT_MANAGER`);
+    return this.http.get<UserDTO[]>(`${this.apiUrl}/role/${role}`);
   }
 
   createUser(user: UserDTO): Observable<UserDTO> {

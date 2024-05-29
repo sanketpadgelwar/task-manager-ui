@@ -80,3 +80,35 @@
 .details ul li {
   margin-bottom: 5px;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .column {
+    flex: none;
+    width: 100%;
+  }
+
+  .details {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .column h2,
+  .details h2,
+  .details h3 {
+    font-size: 1rem;
+  }
+
+  .column ul li {
+    padding: 8px;
+  }
+
+  .details {
+    padding: 15px;
+  }
+}
