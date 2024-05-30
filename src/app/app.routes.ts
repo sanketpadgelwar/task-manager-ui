@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
-import { CompassCalibrationOutlined } from '@mui/icons-material';
+// import { CompassCalibrationOutlined } from '@mui/icons-material';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectComponent } from './project/project.component';
