@@ -24,7 +24,7 @@ export class HomepageComponent implements OnInit {
   selectedProjectsManager: UserDTO | null = null;
   selectedUser: UserDTO | null = null;
   selectedUsersProject: ProjectDTO[] | null = null;
-  role = 'PRJECTMANAGER';
+  role='PROJECT_MANAGER';
   toggleProject = false;
   toggleManager = false;
   constructor(
