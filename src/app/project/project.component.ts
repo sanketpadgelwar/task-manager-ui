@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-project',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css'],
 })

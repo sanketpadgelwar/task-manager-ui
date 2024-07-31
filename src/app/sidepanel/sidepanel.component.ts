@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './sidepanel.component.html',
-  styleUrl: './sidepanel.component.css'
+  styleUrl: './sidepanel.component.css',
 })
-export class SidepanelComponent {
-
-}
+export class SidepanelComponent {}

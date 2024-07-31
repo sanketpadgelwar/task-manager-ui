@@ -5,7 +5,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectComponent } from './project/project.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'projects', component: ProjectComponent },
 
   { path: 'nav', component: NavbarComponent },

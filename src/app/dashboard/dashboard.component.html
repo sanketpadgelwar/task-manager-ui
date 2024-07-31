@@ -9,19 +9,19 @@
   </div>
 
   <div class="overview-cards">
-    <div class="card">Total Tasks: 50</div>
-    <div class="card">Projects: 5</div>
-    <div class="card">Team Members: 20</div>
-    <div class="card">Notifications: 10</div>
+    <div class="card">Total Tasks: {{ task_Count }}</div>
+    <div class="card">Projects: {{ project_Count }}</div>
+    <div class="card">Team Members: {{ user_Count }}</div>
   </div>
 
+  <h2>Task List</h2>
   <div class="task-list">
-    <h2>Upcoming Tasks</h2>
-    <ul>
-      <li>Task 1 - Due in 2 days</li>
-      <li>Task 2 - Due in 3 days</li>
-      <li>Task 3 - Due in 5 days</li>
-    </ul>
+    <div *ngFor="let task of tasks" class="project-card">
+      <h3>Task Name: {{ task.taskName }}</h3>
+      <p>Description: {{ task.description }}</p>
+      <p>Status: {{ task.status }}</p>
+      <p>Priority: {{ task.priority }}</p>
+    </div>
   </div>
 
   <div class="project-progress">
@@ -31,6 +31,9 @@
     </div>
     <div class="progress-bar">
       <div class="progress" style="width: 50%">Project B - 50%</div>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 30%">Project C - 30%</div>
     </div>
   </div>
 
@@ -44,11 +47,17 @@
 
   <div class="calendar">
     <h2>Calendar</h2>
-    <!-- Add calendar component here -->
+    <div class="calendar-placeholder">
+      <!-- Simple placeholder for calendar -->
+      <p>Calendar Component Placeholder</p>
+    </div>
   </div>
 
   <div class="statistics-charts">
     <h2>Statistics</h2>
-    <!-- Add charts here -->
+    <div class="statistics-placeholder">
+      <!-- Simple placeholder for statistics charts -->
+      <p>Statistics Charts Placeholder</p>
+    </div>
   </div>
 </div>
