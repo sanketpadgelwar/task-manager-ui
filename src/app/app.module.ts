@@ -1,12 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { UserComponent } from './user/user.component';
 import { TaskComponent } from './task/task.component';
 import { ProjectComponent } from './project/project.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,12 +11,9 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomepageComponent,
     UserComponent,
     TaskComponent,
     ProjectComponent,
-    NavbarComponent,
     ProjectComponent,
   ],
   imports: [
@@ -27,8 +21,10 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

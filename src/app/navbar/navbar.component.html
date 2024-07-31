@@ -1,22 +1,16 @@
-<div class="container">
-  <div class="header">
-    <div class="logo">
-      <!-- Your logo or application name -->
-      Task Manager Nav
-    </div>
-    <div class="tabs">
-      <ul>
-        <li><a routerLink="/users" routerLinkActive="active">Users</a></li>
-        <li><a routerLink="/tasks" routerLinkActive="active">Tasks</a></li>
-        <li>
-          <a routerLink="/projects" routerLinkActive="active">Projects</a>
-        </li>
-      </ul>
-    </div>
-    <div class="profile">
-      <!-- Profile option, you can replace it with an icon or dropdown menu -->
-      <a routerLink="/profile">Profile</a>
-    </div>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img
+      class="d-inline-block align-top"
+      src="assets/logo.jpg"
+      width="150"
+      height="40"
+      alt="logo-task-manager"
+    />
+  </a>
+  <div class="search-wrapper">
+    <input placeholder="Search" class="search-input" />
+    <i class="fas fa-search search-icon"></i>
   </div>
-  <router-outlet></router-outlet>
-</div>
+  <i class="fas fa-bell notification-icon"></i>
+</nav>

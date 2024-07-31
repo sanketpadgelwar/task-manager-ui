@@ -1,18 +1,10 @@
-<div class="container">
-  <div class="header">
-    <div class="logo">Task Manager</div>
-    <div class="tabs">
-      <ul>
-        <li><a routerLink="/users" routerLinkActive="active">Users</a></li>
-        <li><a routerLink="/tasks" routerLinkActive="active">Tasks</a></li>
-        <li>
-          <a routerLink="/projects" routerLinkActive="active">Projects</a>
-        </li>
-      </ul>
-    </div>
-    <div class="profile">
-      <a routerLink="/profile">Profile</a>
-    </div>
+<div class="main">
+  <app-navbar></app-navbar>
+
+  <div class="sidepanel">
+    <app-sidepanel></app-sidepanel>
   </div>
-  <router-outlet></router-outlet>
+  <div class="dashboard">
+    <app-dashboard></app-dashboard>
+  </div>
 </div>

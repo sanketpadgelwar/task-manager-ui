@@ -1,95 +1,37 @@
-.container {
-  width: 100%;
-  padding-top: 60px; /* Add top padding to avoid content being hidden behind the fixed header */
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #1b93bb;
-  color: white;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-sizing: border-box; /* Ensure padding and border are included in the width */
-}
-
-.logo {
-  font-size: 24px;
-}
-
-.tabs ul {
-  list-style-type: none;
-  padding: 0;
+html,
+body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.main {
   display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 
-.tabs ul li {
-  margin-right: 20px;
+.sidepanel {
+  position: fixed;
+  top: 5px;
+  left: 0;
+  width: 200px;
+  background-color: #f4f4f4;
+  overflow-y: auto;
 }
 
-.tabs ul li:last-child {
-  margin-right: 0;
+.dashboard {
+  margin-top: 60px;
+  margin-left: 5px;
+  padding: 20px;
+  width: 100%;
+  height: calc(100% - 70px);
+  overflow-y: auto;
 }
 
-.tabs ul li a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s, font-size 0.3s; /* Smooth color and font size transition */
-}
-
-.tabs ul li a:hover {
-  color: #1f1f1d;
-  font-size: larger;
-}
-
-.profile {
-  margin-left: auto; /* Push profile to the right */
-}
-
-.profile a {
-  text-decoration: none;
-  color: white;
-  padding: 5px 10px;
-  border: 2px solid white;
-  border-radius: 5px;
-  transition: background-color 0.3s, border-color 0.3s, font-size 0.3s; /* Smooth transition for background, border color, and font size */
-}
-
-.profile a:hover {
-  background-color: white;
-  color: #1b93bb;
-  font-size: larger;
-}
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .tabs {
-    width: 100%;
-  }
-
-  .tabs ul {
-    flex-direction: column;
-  }
-
-  .tabs ul li {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .profile {
-    margin: 10px 0 0 0; /* Adjust margin for the profile section */
-    align-self: flex-start;
-  }
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #f8f9fa;
 }
