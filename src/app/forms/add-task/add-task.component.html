@@ -2,16 +2,7 @@
 <div class="add-task">
   <h2>Add Task</h2>
   <!-- -->
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="taskId">Task ID</label>
-      <input
-        id="taskId"
-        formControlName="taskId"
-        type="number"
-        class="form-control"
-      />
-    </div>
+  <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="taskName">Task Name</label>
       <input

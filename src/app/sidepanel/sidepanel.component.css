@@ -2,13 +2,14 @@
 .side-panel {
   margin-top: 60px;
   width: 200px;
-  height: 89vh;
+  height: 86vh;
   background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-right: 1px solid #e1e4e8;
   display: flex;
   flex-direction: column;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   position: fixed;
 }
 
@@ -75,6 +76,7 @@
 
 .toggle-button {
   padding: 10px 15px;
+  margin-bottom: 5px;
   border: none;
   border-radius: 5px;
   background: linear-gradient(90deg, #007bff, #0056b3);

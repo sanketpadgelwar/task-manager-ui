@@ -4,13 +4,15 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
-import { FormGroup, FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
+import { AddTaskComponent } from './forms/add-task/add-task.component';
+import { CreateProjectComponent } from './forms/create-project/create-project.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [AddTaskComponent, CreateProjectComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -19,6 +21,7 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     CommonModule,
     // FormGroup,
+    ReactiveFormsModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,

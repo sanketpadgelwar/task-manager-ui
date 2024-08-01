@@ -1,33 +1,38 @@
 /* app-navbar.component.css */
 .navbar {
   margin-left: 10px;
-  /* margin-top: 0; */
-  width: 100%;
+  margin-top: 10px;
+  background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #e1e4e8;
+  width: 100%; /* Adjust width to account for margin */
   display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribute space between items */
   position: fixed;
-  align-items: left;
-  background-color: aqua;
-  border-radius: 8px;
-  border: bold 2px #111;
-  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+
+.navbar .logo {
+  /* flex-shrink: 0; */
+  width: 400px;
+  height: 50px;
 }
 
 .search-wrapper {
   display: flex;
-  justify-content: left;
-}
-.search-input {
-  flex-grow: 1;
-  /* margin-left: 20px; */
-  width: 600px;
+  flex-grow: 1; /* Allow search wrapper to grow */
+  justify-content: center; /* Center the search bar */
+  margin: 0 20px; /* Space between search bar and icons */
 }
 
-.search-input i {
-  margin-top: 5px;
+.search-input {
+  width: 600px;
+  height: 30px;
 }
 
 .notification-icon {
-  margin-left: 20px;
-  margin-right: 25px;
   font-size: 24px;
+  margin-right: 10px;
+  margin-left: 20px; /* Space between search bar and notification icon */
 }

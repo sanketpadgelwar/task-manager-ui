@@ -11,8 +11,8 @@ import {
 
 @Component({
   selector: 'app-add-task',
-  standalone: true,
-  imports: [FormsModule],
+  // standalone: true,
+  // imports: [FormsModule],
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css'],
 })
@@ -46,6 +46,9 @@ export class AddTaskComponent {
   }
 
   onSubmit() {
+    if (this.addTaskForm.valid) {
+      console.log(this.addTaskForm.value);
+    }
     this.taskService.createTask(this.task).subscribe(() => {
       this.router.navigate(['/dashboard']);
     });

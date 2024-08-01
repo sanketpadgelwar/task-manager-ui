@@ -14,10 +14,10 @@ body {
 
 .sidepanel {
   position: fixed;
-  top: 5px;
+  top: 12px;
   left: 0;
   width: 200px;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
   overflow-y: auto;
 }
 
