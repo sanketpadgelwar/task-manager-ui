@@ -3,11 +3,10 @@
   <div class="header">
     <h1>Welcome, Sanket</h1>
     <div class="quick-actions">
-      <button>Add Task</button>
-      <button>Create Project</button>
+      <button (click)="navigateTo('add-task')">Add Task</button>
+      <button (click)="navigateTo('create-project')">Create Project</button>
     </div>
   </div>
-
   <div class="overview-cards">
     <div class="card">Total Tasks: {{ task_Count }}</div>
     <div class="card">Projects: {{ project_Count }}</div>

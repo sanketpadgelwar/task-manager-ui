@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
+import { ProjectDTO } from '../dto/project.dto';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,13 +11,22 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./project.component.css'],
 })
 export class ProjectComponent implements OnInit {
-  projects: any[] = [];
+  projects: ProjectDTO[] = [];
+  selectedProject: any;
 
   constructor(private projectService: ProjectService) {}
 
   ngOnInit(): void {
+    this.loadProjects();
+  }
+
+  loadProjects() {
     this.projectService.getAllProjects().subscribe((data) => {
       this.projects = data;
     });
+  }
+
+  selectProject(project: any) {
+    this.selectedProject = project;
   }
 }

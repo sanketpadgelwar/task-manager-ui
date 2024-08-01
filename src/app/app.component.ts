@@ -19,19 +19,4 @@ import { ProjectComponent } from './project/project.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'task-manager-ui';
-  showProjects: boolean = false; // or false
-  showDashboard: boolean = true; // or true
-
-  // Method to toggle between views
-  toggleView(view: string) {
-    if (view === 'projects') {
-      this.showProjects = true;
-      this.showDashboard = false;
-    } else if (view === 'dashboard') {
-      this.showProjects = false;
-      this.showDashboard = true;
-    }
-  }
-}
+export class AppComponent {}

@@ -33,6 +33,7 @@
 
 .overview-cards {
   display: flex;
+  
   justify-content: space-between;
   margin: 20px 0;
 }
@@ -41,10 +42,10 @@
   flex: 1;
   padding: 20px;
   margin: 0 10px;
-  background-color: #ffffff;
+  background-color: #c38585;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(245, 9, 9, 0.1);
 }
 
 .task-list {

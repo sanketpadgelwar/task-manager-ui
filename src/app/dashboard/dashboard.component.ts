@@ -6,11 +6,12 @@ import { UserService } from '../user.service';
 import { TaskDTO } from '../dto/task.dto';
 import { UserDTO } from '../dto/user.dto';
 import { CommonModule } from '@angular/common';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule,],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
@@ -21,11 +22,12 @@ export class DashboardComponent implements OnInit {
   project_Count = 0;
   task_Count = 0;
   user_Count = 0;
-
+  private activeTab: string = 'dashboard';
   constructor(
     private projectService: ProjectService,
     private taskService: TaskService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -69,5 +71,10 @@ export class DashboardComponent implements OnInit {
         console.error('Error fetching projects', error);
       }
     );
+  }
+
+  navigateTo(tab: string) {
+    this.activeTab = tab; // Set the active tab
+    this.router.navigate([`/${tab}`]);
   }
 }

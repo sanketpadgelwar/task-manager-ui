@@ -4,9 +4,11 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
+import { FormGroup, FormsModule } from '@angular/forms';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -16,6 +18,11 @@ import { CommonModule } from '@angular/common';
     RouterModule.forRoot(routes),
     MatIconModule,
     CommonModule,
+    // FormGroup,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [],

@@ -1,0 +1,61 @@
+<!-- create-project.component.html -->
+<div class="create-project">
+  <h2>Create Project</h2>
+  <!-- [formGroup]="createProjectForm" -->
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="projectId">Project ID</label>
+      <input
+        id="projectId"
+        formControlName="projectId"
+        type="number"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectName">Project Name</label>
+      <input
+        id="projectName"
+        formControlName="projectName"
+        type="text"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        class="form-control"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input
+        id="startDate"
+        formControlName="startDate"
+        type="date"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input
+        id="endDate"
+        formControlName="endDate"
+        type="date"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="managerId">Manager ID</label>
+      <input
+        id="managerId"
+        formControlName="managerId"
+        type="number"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Create Project</button>
+  </form>
+</div>
