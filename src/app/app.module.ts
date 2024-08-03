@@ -12,7 +12,7 @@ import { AddTaskComponent } from './forms/add-task/add-task.component';
 import { CreateProjectComponent } from './forms/create-project/create-project.component';
 
 @NgModule({
-  declarations: [AddTaskComponent, CreateProjectComponent],
+  declarations: [],
   imports: [
     BrowserModule,
     HttpClientModule,

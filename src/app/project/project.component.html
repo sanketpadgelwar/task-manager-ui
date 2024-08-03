@@ -1,18 +1,20 @@
 <!-- project.component.html -->
 <div class="project-container">
   <!-- Project Overview -->
-  <div class="project-overview">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div
-        *ngFor="let project of projects"
-        class="project-card"
-        (click)="selectProject(project)"
-      >
-        <h3>{{ project.projectName}}</h3>
-        <p>Description: {{ project.description }}</p>
-        <p>Start Date: {{ project.startDate | date }}</p>
-        <p>End Date: {{ project.endDate | date }}</p>
+  <div class="main-content">
+    <div class="project-overview">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div
+          *ngFor="let project of projects"
+          class="project-card"
+          (click)="selectProject(project)"
+        >
+          <h3>{{ project.projectName }}</h3>
+          <p>Description: {{ project.description }}</p>
+          <p>Start Date: {{ project.startDate | date }}</p>
+          <p>End Date: {{ project.endDate | date }}</p>
+        </div>
       </div>
     </div>
   </div>

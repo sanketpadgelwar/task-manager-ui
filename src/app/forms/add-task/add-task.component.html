@@ -1,7 +1,5 @@
-<!-- add-task.component.html -->
 <div class="add-task">
   <h2>Add Task</h2>
-  <!-- -->
   <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="taskName">Task Name</label>
@@ -22,21 +20,19 @@
     </div>
     <div class="form-group">
       <label for="status">Status</label>
-      <input
-        id="status"
-        formControlName="status"
-        type="text"
-        class="form-control"
-      />
+      <select id="status" formControlName="status" class="form-control">
+        <option *ngFor="let status of statusOptions" [value]="status">
+          {{ status }}
+        </option>
+      </select>
     </div>
     <div class="form-group">
       <label for="priority">Priority</label>
-      <input
-        id="priority"
-        formControlName="priority"
-        type="text"
-        class="form-control"
-      />
+      <select id="priority" formControlName="priority" class="form-control">
+        <option *ngFor="let priority of priorityOptions" [value]="priority">
+          {{ priority }}
+        </option>
+      </select>
     </div>
     <div class="form-group">
       <label for="deadline">Deadline</label>
@@ -49,21 +45,23 @@
     </div>
     <div class="form-group">
       <label for="projectId">Project ID</label>
-      <input
-        id="projectId"
-        formControlName="projectId"
-        type="number"
-        class="form-control"
-      />
+      <select id="projectId" formControlName="projectId" class="form-control">
+        <option *ngFor="let project of projects" [value]="project.projectId">
+          {{ project.projectName }}
+        </option>
+      </select>
     </div>
     <div class="form-group">
       <label for="assignedUserId">Assigned User ID</label>
-      <input
+      <select
         id="assignedUserId"
         formControlName="assignedUserId"
-        type="number"
         class="form-control"
-      />
+      >
+        <option *ngFor="let user of users" [value]="user.userId">
+          {{ user.username }}
+        </option>
+      </select>
     </div>
     <button type="submit" class="btn btn-primary">Add Task</button>
   </form>

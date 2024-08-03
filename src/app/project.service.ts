@@ -11,6 +11,9 @@ export class ProjectService {
 
   constructor(private http: HttpClient) {}
 
+  showMessage() {
+    console.log('showMessage');
+  }
   getAllProjects(): Observable<ProjectDTO[]> {
     return this.http.get<ProjectDTO[]>(this.apiUrl);
   }
@@ -21,6 +24,7 @@ export class ProjectService {
   }
 
   createProject(project: ProjectDTO): Observable<ProjectDTO> {
+    console.log('Create project' + project);
     return this.http.post<ProjectDTO>(`${this.apiUrl}/create`, project);
   }
 

@@ -1,34 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProjectDTO } from '../../dto/project.dto';
-import { ProjectService } from '../../project.service';
 import {
   FormBuilder,
   FormGroup,
-  FormsModule,
   Validators,
+  ReactiveFormsModule,
 } from '@angular/forms';
-import { UserDTO } from '../../dto/user.dto';
+import { ProjectService } from '../../project.service';
 import { UserService } from '../../user.service';
+import { UserDTO } from '../../dto/user.dto';
+import { ProjectDTO } from '../../dto/project.dto';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-project',
-  // standalone: true,
-  // imports: [FormsModule],
+  standalone: true,
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './create-project.component.html',
   styleUrls: ['./create-project.component.css'],
 })
 export class CreateProjectComponent implements OnInit {
-  project: ProjectDTO = {
-    projectId: 0,
-    projectName: '',
-    description: '',
-    startDate: '',
-    endDate: '',
-    managerId: 0,
-  };
   createProjectForm: FormGroup;
   managers: UserDTO[] = [];
+
   constructor(
     private projectService: ProjectService,
     private router: Router,
@@ -36,7 +30,6 @@ export class CreateProjectComponent implements OnInit {
     private userService: UserService
   ) {
     this.createProjectForm = this.fb.group({
-      projectId: [null, Validators.required],
       projectName: ['', Validators.required],
       description: ['', Validators.required],
       startDate: ['', Validators.required],
@@ -44,6 +37,7 @@ export class CreateProjectComponent implements OnInit {
       managerId: [null, Validators.required],
     });
   }
+
   ngOnInit(): void {
     this.loadManagers();
   }
@@ -52,7 +46,6 @@ export class CreateProjectComponent implements OnInit {
     this.userService.getUsersByRole('PROJECT_MANAGER').subscribe(
       (data) => {
         this.managers = data;
-
         console.log(this.managers);
       },
       (error) => {
@@ -60,9 +53,16 @@ export class CreateProjectComponent implements OnInit {
       }
     );
   }
+
   onSubmit() {
-    this.projectService.createProject(this.project).subscribe(() => {
-      this.router.navigate(['/dashboard']);
-    });
+    if (this.createProjectForm.valid) {
+      const project: ProjectDTO = this.createProjectForm.value;
+      this.projectService.createProject(project).subscribe(() => {
+        console.log('Project created:', project.projectName);
+        this.router.navigate(['/dashboard']);
+      });
+    } else {
+      console.log('Form is not valid' + this.createProjectForm.value);
+    }
   }
 }
