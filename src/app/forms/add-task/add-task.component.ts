@@ -31,6 +31,7 @@ export class AddTaskComponent implements OnInit {
     deadline: '',
     projectId: 0,
     assignedUserId: 0,
+    lastUpdatedOn: new Date(),
   };
   statusOptions: string[] = [
     'BACKLOG',

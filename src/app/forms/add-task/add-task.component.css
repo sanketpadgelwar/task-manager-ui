@@ -5,6 +5,7 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Lato", sans-serif;
 }
 
 .form-group {
@@ -31,7 +32,7 @@
   margin-bottom: 5px;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
+  background: #1803a3;
   color: white;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -41,6 +42,6 @@
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, #0056b3, #003d7a);
+  background: #0e02f9;
   transform: scale(1.05);
 }

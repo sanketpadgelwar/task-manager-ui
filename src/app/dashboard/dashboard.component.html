@@ -2,7 +2,7 @@
 <div class="dashboard">
   <div class="header">
     <!-- Conditional display based on screen size -->
-    <h1 *ngIf="isLargeScreen">Welcome, Sanket</h1>
+    <h1 *ngIf="isLargeScreen">Welcome,</h1>
     <h2 *ngIf="!isLargeScreen && isMediumScreen">Welcome, Sanket</h2>
     <h3 *ngIf="!isLargeScreen && !isMediumScreen">Welcome, Sanket</h3>
 
@@ -24,11 +24,17 @@
       <h3>Task Name: {{ task.taskName }}</h3>
       <p>Description: {{ task.description }}</p>
       <p>Status: {{ task.status }}</p>
-      <p [ngClass]="getPriorityClass(task.priority)">
-        Priority: {{ task.priority }}
+      <p>
+        Priority:
+        <span
+          [ngStyle]="{ color: getPriorityColor(task.priority) }"
+          style="font-weight: bold"
+          >{{ task.priority }}</span
+        >
       </p>
     </div>
   </div>
+
   <div class="project-progress">
     <h2>Project Progress</h2>
     <div *ngFor="let project of projects" class="progress-bar">
@@ -49,12 +55,21 @@
     </div>
   </div>
 
-  <div class="activity-feed">
-    <h2>Recent Activities</h2>
-    <ul>
-      <li>User A completed Task X</li>
-      <li>User B added a comment to Task Y</li>
-    </ul>
+  <!-- last-activities.component.html -->
+
+  <div class="last-activities-container">
+    <h2>Last Activities</h2>
+    <div class="last-activities-list">
+      <ul>
+        <li *ngFor="let activity of activities">
+          <span class="task-name">{{ activity.taskName }}</span> -
+          <span class="task-updated"
+            >Last updated on:
+            {{ activity.lastUpdatedOn | date : "short" }}</span
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="calendar">

@@ -42,8 +42,4 @@ export class UserService {
     return this.http.delete<void>(`${this.apiUrl}/${userId}`);
   }
 
-  getUsersByProjectId(projectId: number): Observable<UserDTO[]> {
-    const url = `${this.apiUrl}?projectId=${projectId}`;
-    return this.http.get<UserDTO[]>(url);
-  }
 }

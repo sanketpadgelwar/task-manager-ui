@@ -1,21 +1,34 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
 .project-container {
-  margin-left: 0px; /* Adjust margin for sidebar */
-  padding: 0px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: margin-left 0.3s ease;
 }
 
 .project-overview {
   max-width: 100%;
-  margin-left: 10px;
-  margin-right: 0px;
+  margin: 0 10px;
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.project-overview h2 {
+  margin-bottom: 20px;
+  color: #007bff;
 }
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  ); /* Responsive grid */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
@@ -29,6 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-left: 5px solid #007bff;
 }
 
 .project-card:hover {
@@ -59,13 +73,32 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
+  border-left: 5px solid #007bff;
+}
+
+.project-details h2 {
+  color: #007bff;
+}
+
+.project-details button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.project-details button:hover {
+  background-color: #0056b3;
 }
 
 .tasks-users-section {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  height: 400px; /* Adjust the height as needed */
+  height: 400px;
 }
 
 .tasks-section,
@@ -76,6 +109,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow-y: auto;
+  border-left: 5px solid #007bff;
+}
+
+.tasks-section h3,
+.employees-section h3 {
+  color: #007bff;
 }
 
 .task-card,
@@ -84,6 +123,12 @@
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 10px;
+  border-left: 5px solid #007bff;
+}
+
+.task-card h4,
+.employee-card p {
+  margin: 5px 0;
 }
 
 .employee-image {
@@ -100,9 +145,11 @@
 
 .filter-section {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
+  max-width: 100%;
 }
 
 .filter-section label {
@@ -114,48 +161,37 @@
   padding: 5px;
   border: 1px solid #ced4da;
   border-radius: 4px;
+  flex: 1;
+  min-width: 100px;
+  max-width: 200px;
 }
 
 @media (max-width: 1024px) {
   .project-container {
-    margin-left: 150px; /* Adjust margin for sidebar */
+    margin: 20px;
   }
 
   .project-overview {
-    max-width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
   }
 
   .project-list {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(180px, 1fr)
-    ); /* Adjust grid for smaller screens */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
   .project-container {
-    margin-left: 150px; /* Adjust margin for sidebar */
+    margin: 20px;
     padding: 10px;
   }
 
   .project-overview {
-    max-width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
   }
 
   .project-list {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(150px, 1fr)
-    ); /* Adjust grid for smaller screens */
-  }
-
-  .project-card {
-    padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
   .tasks-users-section {
@@ -166,38 +202,22 @@
   .tasks-section,
   .employees-section {
     margin-bottom: 20px;
-    height: 200px; /* Adjust the height for smaller screens */
+    height: 200px;
   }
 }
 
 @media (max-width: 480px) {
   .project-container {
-    margin-left: 120px; /* Adjust margin for sidebar */
+    margin: 20px;
     padding: 10px;
   }
 
   .project-overview {
-    max-width: 100%;
-    margin-left: 10px;
+    margin: 0 10px;
   }
 
   .project-list {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(120px, 1fr)
-    ); /* Adjust grid for smaller screens */
-  }
-
-  .project-card {
-    padding: 8px;
-  }
-
-  .project-card h3 {
-    font-size: 1em;
-  }
-
-  .project-card p {
-    font-size: 0.9em;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 
   .tasks-users-section {
@@ -208,6 +228,6 @@
   .tasks-section,
   .employees-section {
     margin-bottom: 20px;
-    height: 150px; /* Adjust the height for smaller screens */
+    height: 150px;
   }
 }

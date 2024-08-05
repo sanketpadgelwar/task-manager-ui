@@ -6,5 +6,6 @@ export interface TaskDTO {
   priority: string;
   deadline: string;
   projectId: number;
+  lastUpdatedOn: Date;
   assignedUserId: number;
 }

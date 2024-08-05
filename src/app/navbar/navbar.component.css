@@ -1,5 +1,6 @@
 /* Base Styles (for larger screens, like laptops) */
 .navbar {
+  font-family: "Lato", sans-serif;
   background: linear-gradient(180deg, #f8f9fa, #e9ecef);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-right: 1px solid #e1e4e8;

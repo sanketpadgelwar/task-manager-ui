@@ -4,5 +4,6 @@ export interface ProjectDTO {
   description: string;
   startDate: string;
   endDate: string;
+  lastUpdated: Date;
   managerId: number;
 }

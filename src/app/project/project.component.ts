@@ -69,7 +69,7 @@ export class ProjectComponent implements OnInit {
   loadProjectTasks(projectId: number): void {
     this.taskService.getTasksByProjectId(projectId).subscribe(
       (data) => {
-        console.log('Tasks:', data); // Log tasks
+        console.log('Tasks by projects:', data); // Log tasks
         this.tasks = data;
         this.filteredTasks = [...this.tasks];
       },
@@ -80,9 +80,9 @@ export class ProjectComponent implements OnInit {
   }
 
   loadProjectUsers(projectId: number): void {
-    this.userService.getUsersByProjectId(projectId).subscribe(
+    this.taskService.getUsersByProjectId(projectId).subscribe(
       (data) => {
-        console.log('Users:', data); // Log users
+        console.log('Users by project:', data); // Log users
         this.users = data;
         this.filteredUsers = [...this.users];
       },
@@ -130,5 +130,18 @@ export class ProjectComponent implements OnInit {
       if (a[property] > b[property]) return 1;
       return 0;
     });
+  }
+
+  getPriorityColor(priority: string): string {
+    switch (priority) {
+      case 'HIGH':
+        return 'red';
+      case 'MEDIUM':
+        return 'orange';
+      case 'LOW':
+        return 'green';
+      default:
+        return 'black';
+    }
   }
 }

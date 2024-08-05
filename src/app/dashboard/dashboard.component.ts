@@ -50,6 +50,7 @@ export class DashboardComponent implements OnInit {
     PRODUCTION_ACCEPTANCE: '#69F628', //green
     DEFFECT_RAISED: '#4F51B1', //purpl
   };
+  activities: TaskDTO[] = [];
 
   constructor(
     private projectService: ProjectService,
@@ -63,6 +64,7 @@ export class DashboardComponent implements OnInit {
     this.loadTasks();
     this.loadUsers();
     this.updateScreenSize(window.innerWidth); // Initial check
+    this.loadRecentActivities();
   }
 
   loadProjects(): void {
@@ -103,6 +105,22 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  loadRecentActivities(): void {
+    this.taskService.getAllTasks().subscribe(
+      (data) => {
+        this.activities = data.sort(
+          (a, b) =>
+            new Date(b.lastUpdatedOn).getTime() -
+            new Date(a.lastUpdatedOn).getTime()
+        );
+        console.log('Activities ' + this.activities);
+      },
+      (error) => {
+        console.error('Error fetching activities', error);
+      }
+    );
+  }
+
   navigateTo(tab: string) {
     this.activeTab = tab; // Set the active tab
     this.router.navigate([`/${tab}`]);
@@ -127,16 +145,16 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  getPriorityClass(priority: string): string {
+  getPriorityColor(priority: string): string {
     switch (priority) {
       case 'HIGH':
-        return 'priority-high';
+        return 'red';
       case 'MEDIUM':
-        return 'priority-medium';
+        return 'orange';
       case 'LOW':
-        return 'priority-low';
+        return 'green';
       default:
-        return '';
+        return 'black';
     }
   }
 

@@ -13,6 +13,7 @@
           <p>Description: {{ project.description }}</p>
           <p>Start Date: {{ project.startDate }}</p>
           <p>End Date: {{ project.endDate }}</p>
+          <p>Project Manager : Name</p>
         </div>
       </div>
     </div>
@@ -70,7 +71,14 @@
           <h4>Task: {{ task.taskName }}</h4>
           <p><strong>Description:</strong> {{ task.description }}</p>
           <p><strong>Status:</strong> {{ task.status }}</p>
-          <p><strong>Priority:</strong> {{ task.priority }}</p>
+          <p>
+        Priority:
+        <span
+          [ngStyle]="{ color: getPriorityColor(task.priority) }"
+          style="font-weight: bold"
+          >{{ task.priority }}</span
+        >
+      </p>
         </div>
       </div>
 

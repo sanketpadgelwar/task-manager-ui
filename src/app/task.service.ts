@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TaskDTO } from './dto/task.dto';
+import { UserDTO } from './dto/user.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +29,14 @@ export class TaskService {
   }
 
   getTasksByProjectId(projectId: number): Observable<TaskDTO[]> {
-    const url = `${this.apiUrl}?projectId=${projectId}`;
-    return this.http.get<TaskDTO[]>(url);
+    return this.http.get<TaskDTO[]>(
+      `${this.apiUrl}/tasks/projectId/${projectId}`
+    );
+  }
+
+  getUsersByProjectId(projectId: number): Observable<UserDTO[]> {
+    return this.http.get<UserDTO[]>(
+      `${this.apiUrl}/users/projectId/${projectId}`
+    );
   }
 }
