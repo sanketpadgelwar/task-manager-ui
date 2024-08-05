@@ -11,20 +11,15 @@ export class ProjectService {
 
   constructor(private http: HttpClient) {}
 
-  showMessage() {
-    console.log('showMessage');
-  }
   getAllProjects(): Observable<ProjectDTO[]> {
     return this.http.get<ProjectDTO[]>(this.apiUrl);
   }
 
   getProjectsByManagerId(id: number): Observable<ProjectDTO[]> {
-    console.log(`http://localhost:9090/t-manager/api/projects/managerid/${id}`);
     return this.http.get<ProjectDTO[]>(`${this.apiUrl}/managerid/${id}`);
   }
 
   createProject(project: ProjectDTO): Observable<ProjectDTO> {
-    console.log('Create project' + project);
     return this.http.post<ProjectDTO>(`${this.apiUrl}/create`, project);
   }
 

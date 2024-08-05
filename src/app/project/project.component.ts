@@ -44,17 +44,15 @@ export class ProjectComponent implements OnInit {
   loadProjects(): void {
     this.projectService.getAllProjects().subscribe(
       (data) => {
-        console.log('Projects:', data); // Log projects
         this.projects = data;
       },
       (error) => {
-        console.error('Error fetching projects', error);
+        console.error('Error fetching Projects', error);
       }
     );
   }
 
   selectProject(project: ProjectDTO): void {
-    console.log('Selected Project:', project); // Log selected project
     this.selectedProject = project;
     this.loadProjectTasks(project.projectId);
     this.loadProjectUsers(project.projectId);
@@ -69,12 +67,11 @@ export class ProjectComponent implements OnInit {
   loadProjectTasks(projectId: number): void {
     this.taskService.getTasksByProjectId(projectId).subscribe(
       (data) => {
-        console.log('Tasks by projects:', data); // Log tasks
         this.tasks = data;
         this.filteredTasks = [...this.tasks];
       },
       (error) => {
-        console.error('Error fetching tasks', error);
+        console.error('Error fetching Projects By Task', error);
       }
     );
   }
@@ -82,12 +79,11 @@ export class ProjectComponent implements OnInit {
   loadProjectUsers(projectId: number): void {
     this.taskService.getUsersByProjectId(projectId).subscribe(
       (data) => {
-        console.log('Users by project:', data); // Log users
         this.users = data;
         this.filteredUsers = [...this.users];
       },
       (error) => {
-        console.error('Error fetching users', error);
+        console.error('Error fetching Users By Project', error);
       }
     );
   }

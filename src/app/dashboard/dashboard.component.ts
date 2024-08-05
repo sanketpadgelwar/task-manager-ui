@@ -75,7 +75,7 @@ export class DashboardComponent implements OnInit {
         this.calculateProjectStatuses();
       },
       (error) => {
-        console.error('Error fetching projects', error);
+        console.error('Error fetching Projects', error);
       }
     );
   }
@@ -88,7 +88,7 @@ export class DashboardComponent implements OnInit {
         this.calculateProjectStatuses();
       },
       (error) => {
-        console.error('Error fetching tasks', error);
+        console.error('Error fetching Tasks', error);
       }
     );
   }
@@ -100,7 +100,7 @@ export class DashboardComponent implements OnInit {
         this.user_Count = this.users.length;
       },
       (error) => {
-        console.error('Error fetching users', error);
+        console.error('Error fetching Users', error);
       }
     );
   }
@@ -113,10 +113,9 @@ export class DashboardComponent implements OnInit {
             new Date(b.lastUpdatedOn).getTime() -
             new Date(a.lastUpdatedOn).getTime()
         );
-        console.log('Activities ' + this.activities);
       },
       (error) => {
-        console.error('Error fetching activities', error);
+        console.error('Error fetching Last Activities', error);
       }
     );
   }
