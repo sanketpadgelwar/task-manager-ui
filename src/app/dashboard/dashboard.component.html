@@ -29,17 +29,23 @@
       </p>
     </div>
   </div>
-
   <div class="project-progress">
     <h2>Project Progress</h2>
-    <div class="progress-bar">
-      <div class="progress" style="width: 70%">Project A - 70%</div>
-    </div>
-    <div class="progress-bar">
-      <div class="progress" style="width: 50%">Project B - 50%</div>
-    </div>
-    <div class="progress-bar">
-      <div class="progress" style="width: 30%">Project C - 30%</div>
+    <div *ngFor="let project of projects" class="progress-bar">
+      <div class="progress-title">{{ project.projectName }}</div>
+      <div class="progress-container">
+        <div
+          *ngFor="let status of projectStatuses[project.projectId]"
+          class="status-bar"
+          [ngStyle]="{
+            width: status.percentage + '%',
+            'background-color': status.color
+          }"
+          title="{{ status.status }} - {{ status.percentage.toFixed(2) }}%"
+        >
+          {{ status.statusCode }} ({{ status.percentage.toFixed(2) }}%)
+        </div>
+      </div>
     </div>
   </div>
 

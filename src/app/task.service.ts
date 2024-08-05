@@ -7,7 +7,6 @@ import { TaskDTO } from './dto/task.dto';
   providedIn: 'root',
 })
 export class TaskService {
- 
   private apiUrl = 'http://localhost:9090/t-manager/api/tasks';
 
   constructor(private http: HttpClient) {}
@@ -26,5 +25,10 @@ export class TaskService {
 
   deleteTask(taskId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${taskId}`);
+  }
+
+  getTasksByProjectId(projectId: number): Observable<TaskDTO[]> {
+    const url = `${this.apiUrl}?projectId=${projectId}`;
+    return this.http.get<TaskDTO[]>(url);
   }
 }

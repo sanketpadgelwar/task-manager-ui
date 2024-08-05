@@ -1,5 +1,5 @@
-.projects-container {
-  margin-left: 100px; /* Adjust margin for sidebar */
+.project-container {
+  margin-left: 0px; /* Adjust margin for sidebar */
   padding: 0px;
   transition: margin-left 0.3s ease;
 }
@@ -47,18 +47,86 @@
   color: #6c757d;
 }
 
+.project-details-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.project-details {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tasks-users-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 400px; /* Adjust the height as needed */
+}
+
+.tasks-section,
+.employees-section {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.task-card,
+.employee-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.employee-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.employee-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.filter-section label {
+  font-weight: bold;
+}
+
+.filter-section select,
+.filter-section input {
+  padding: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
 @media (max-width: 1024px) {
-  .projects-container {
-    top: 50px;
+  .project-container {
     margin-left: 150px; /* Adjust margin for sidebar */
   }
 
   .project-overview {
     max-width: 100%;
-    margin-top: 0px;
-    margin-right: 10px;
     margin-left: 10px;
+    margin-right: 10px;
   }
+
   .project-list {
     grid-template-columns: repeat(
       auto-fill,
@@ -68,14 +136,13 @@
 }
 
 @media (max-width: 768px) {
-  .projects-container {
-    top: 60px;
+  .project-container {
     margin-left: 150px; /* Adjust margin for sidebar */
     padding: 10px;
   }
+
   .project-overview {
     max-width: 100%;
-    margin-top: 0px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -90,21 +157,30 @@
   .project-card {
     padding: 10px;
   }
+
+  .tasks-users-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .tasks-section,
+  .employees-section {
+    margin-bottom: 20px;
+    height: 200px; /* Adjust the height for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
-  .projects-container {
-    top: 500px;
-    margin-left: 120px;
-    height: calc(100% - 145px); /* Adjust margin for sidebar */
+  .project-container {
+    margin-left: 120px; /* Adjust margin for sidebar */
     padding: 10px;
   }
 
   .project-overview {
     max-width: 100%;
-    margin-top: 60px;
     margin-left: 10px;
   }
+
   .project-list {
     grid-template-columns: repeat(
       auto-fill,
@@ -122,5 +198,16 @@
 
   .project-card p {
     font-size: 0.9em;
+  }
+
+  .tasks-users-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .tasks-section,
+  .employees-section {
+    margin-bottom: 20px;
+    height: 150px; /* Adjust the height for smaller screens */
   }
 }

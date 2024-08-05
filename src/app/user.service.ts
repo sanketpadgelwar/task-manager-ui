@@ -7,6 +7,9 @@ import { UserDTO } from './dto/user.dto';
   providedIn: 'root',
 })
 export class UserService {
+  getUserByUserName(userName: string) {
+    return this.http.get<UserDTO>(`${this.apiUrl}/userName/${userName}`);
+  }
   getUsersById() {
     throw new Error('Method not implemented.');
   }
@@ -37,5 +40,10 @@ export class UserService {
 
   deleteUser(userId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${userId}`);
+  }
+
+  getUsersByProjectId(projectId: number): Observable<UserDTO[]> {
+    const url = `${this.apiUrl}?projectId=${projectId}`;
+    return this.http.get<UserDTO[]>(url);
   }
 }

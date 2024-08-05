@@ -31,6 +31,12 @@
   font-size: 20px;
   margin-right: 8px;
 }
+.tab.active {
+  background-color: #367ad3; /* Highlight color */
+  color: #fcfdfd; /* Text color for active tab */
+  font-weight: bold; /* Font weight for active tab */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for emphasis */
+}
 
 .tab:hover {
   font-weight: bold;
@@ -81,7 +87,7 @@
   margin-bottom: 0px;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
+  background: #1803a3;
   color: white;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -89,7 +95,7 @@
 }
 
 .toggle-button:hover {
-  background: linear-gradient(90deg, #0056b3, #003d7a);
+  background: #0e02f9;
   transform: scale(1.05);
 }
 
