@@ -1,0 +1,47 @@
+/* last-activities.component.css */
+
+.last-activities-container {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-left: 5px solid #007bff;
+}
+
+.last-activities-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.last-activities-list {
+  max-height: 400px; /* Adjust this as needed */
+  overflow-y: auto;
+}
+
+.last-activities-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.last-activities-list li {
+  padding: 12px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.last-activities-list li:last-child {
+  border-bottom: none;
+}
+
+.task-name {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.task-updated {
+  font-style: italic;
+  color: #555;
+}

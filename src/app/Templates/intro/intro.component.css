@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: 4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quick-actions button {
+  background: #1803a3;
+  transition: background 0.3s ease, transform 0.3s ease;
+  align-self: center;
+  margin: 0 10px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quick-actions button:hover {
+  background: #0e02f9;
+  transform: scale(1.05);
+}
+
+.overview-cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  color: white;
+  background-color: #7ec7f1;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(245, 9, 9, 0.1);
+  min-width: 250px; /* Ensure minimum width for cards */
+}

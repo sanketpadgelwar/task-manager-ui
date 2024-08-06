@@ -1,0 +1,87 @@
+.dashboard {
+  margin-top: 0px; /* Start below the navbar */
+  margin-left: 0px; /* Adjust margin for sidebar */
+  padding: 20px;
+  font-family: "Lato", sans-serif;
+  transition: margin-left 0.3s ease, margin-top 0.3s ease;
+}
+.calendar,
+.statistics-charts {
+  margin: 20px 0;
+}
+
+.calendar-placeholder,
+.statistics-placeholder {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Medium Screens (up to 1024px) */
+@media (max-width: 1024px) {
+  .dashboard {
+    margin-left: 50px; /* Adjust margin for sidebar */
+    padding: 15px; /* Adjust padding for medium screens */
+  }
+
+  .overview-cards {
+    flex-direction: row; /* Keep cards in a row, but wrap if necessary */
+  }
+
+  .card {
+    margin: 10px;
+    min-width: 200px; /* Adjust minimum width for cards */
+  }
+
+  .task-list {
+    padding: 15px; /* Adjust padding for medium screens */
+  }
+
+  .project-card {
+    padding: 12px; /* Adjust padding for project cards */
+  }
+}
+
+/* Tablet (up to 768px) */
+@media (max-width: 768px) {
+  .dashboard {
+    margin-left: 5px; /* Adjust margin for sidebar */
+    margin-right: 5px;
+    padding: 10px;
+  }
+
+  .overview-cards {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+  }
+
+  .card {
+    margin: 10px 0; /* Adjust margin for stacked cards */
+  }
+}
+
+/* Smartphone (up to 480px) */
+@media (max-width: 480px) {
+  .dashboard {
+    margin-top: 0px;
+    margin-left: 5px; /* Adjust margin for sidebar */
+    padding: 10px;
+  }
+
+  .overview-cards {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+  }
+
+  .card {
+    margin: 10px 0; /* Adjust margin for stacked cards */
+  }
+
+  .task-list {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .project-card {
+    padding: 8px; /* Adjust padding for project cards */
+  }
+}

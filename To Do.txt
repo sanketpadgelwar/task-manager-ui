@@ -1,1 +1,15 @@
-1. update the sorting methods in projectComponent backend (APIS), frontend (when selected UI is not consistent).
+-> add name column in user table.
+-> update the sorting methods in projectComponent backend (APIS), frontend (when selected UI is not consistent).
+-> Who updated the last session.
+-> Message -> project vice chat.
+-> Member of the team working in a project.
+-> project manager name with project details.
+
+
+
+
+
+
+
+
+100.Implement calendar

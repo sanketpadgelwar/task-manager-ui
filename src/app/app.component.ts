@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidepanelComponent } from './sidepanel/sidepanel.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './admin-dashboard/dashboard.component';
 import { ProjectComponent } from './project/project.component';
 
 @Component({

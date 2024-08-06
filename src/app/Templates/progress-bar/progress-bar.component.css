@@ -1,0 +1,74 @@
+.priority-high {
+  /* background-color: #e63946; */
+  background-color: #fcfcfc;
+}
+
+.priority-medium {
+  /* background-color: #f18701; */
+  background-color: #fcfcfc;
+}
+
+.priority-low {
+  /* background-color: #ffeb0a; */
+  background-color: #fcfcfc;
+}
+.project-progress {
+  margin: 20px 0;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  margin: 10px 0;
+  position: relative;
+}
+
+.progress-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.progress-container {
+  display: flex;
+  height: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.status-bar {
+  color: white;
+  text-align: center;
+  line-height: 24px;
+  height: 100%;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-bar::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -40px; /* Position above the status bar */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: #ffffff;
+  color: #333;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold; /* Make the font bold */
+  display: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow */
+  border: 1px solid #ccc; /* Add border */
+  z-index: 9999; /* Ensure tooltip appears on top of everything */
+}
+
+.status-bar:hover::before {
+  display: block;
+}
