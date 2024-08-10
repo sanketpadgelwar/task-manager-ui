@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectDTO } from '../dto/project.dto';
-import { TaskDTO } from '../dto/task.dto';
-import { UserDTO } from '../dto/user.dto';
-import { ProjectService } from '../project.service';
-import { TaskService } from '../task.service';
-import { UserService } from '../user.service';
+import { ProjectDTO } from '../../dto/project.dto';
+import { TaskDTO } from '../../dto/task.dto';
+import { UserDTO } from '../../dto/user.dto';
+import { ProjectService } from '../../project.service';
+import { TaskService } from '../../task.service';
+import { UserService } from '../../user.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AddTaskComponent } from "../../forms/add-task/add-task.component";
 
 @Component({
   selector: 'app-task',
+  standalone: true,
+  imports: [CommonModule, FormsModule, AddTaskComponent],
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css'],
 })
@@ -21,6 +26,7 @@ export class TaskComponent implements OnInit {
     description: '',
     status: '',
     priority: '',
+    lastUpdatedOn: new Date(),
     deadline: '',
     projectId: 0,
     assignedUserId: 0,
@@ -83,6 +89,7 @@ export class TaskComponent implements OnInit {
         status: '',
         priority: '',
         deadline: '',
+        lastUpdatedOn: new Date(),
         projectId: 0,
         assignedUserId: 0,
       };

@@ -1,17 +1,33 @@
-<!-- app-navbar.component.html -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img
-      class="d-inline-block align-top"
-      src="assets/logo.jpg"
-      width="150"
-      height="40"
-      alt="logo-task-manager"
-    />
-  </a>
-  <div class="search-wrapper">
-    <input placeholder="Search" class="search-input" />
-    <i class="fas fa-search search-icon"></i>
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="assets/logo.jpg" alt="Logo" class="logo" />
+    <div class="tabs">
+      <a
+        class="tab user"
+        routerLink="/user"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >User</a
+      >
+      <a
+        class="tab project"
+        routerLink="/project"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Project</a
+      >
+      <a
+        class="tab task"
+        routerLink="/task"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Task</a
+      >
+    </div>
   </div>
-  <i class="fas fa-bell notification-icon"></i>
+  <div class="navbar-right">
+    <a href="#" class="notification-icon">
+      <i class="fa fa-bell"></i>
+    </a>
+  </div>
 </nav>

@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDTO } from '../dto/user.dto';
-import { UserService } from '../user.service';
+import { UserDTO } from '../../dto/user.dto';
+import { UserService } from '../../user.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddUserComponent } from '../../forms/add-user/add-user.component';
 
 @Component({
   selector: 'app-user',
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, AddUserComponent],
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
   users: UserDTO[] = [];
-  showForm: boolean | undefined;
+  showForm: boolean | false | undefined;
   newUser: UserDTO = {
     userId: 0,
     username: '',
@@ -32,6 +37,7 @@ export class UserComponent implements OnInit {
     console.log(this.newUser);
     this.userService.createUser(this.newUser).subscribe(() => {
       this.loadUsers();
+      this.showForm = false;
       this.newUser = {
         userId: 0,
         username: '',
@@ -57,5 +63,8 @@ export class UserComponent implements OnInit {
     this.userService.deleteUser(userId).subscribe(() => {
       this.loadUsers();
     });
+  }
+  toggleForm(): void {
+    this.showForm = !this.showForm;
   }
 }

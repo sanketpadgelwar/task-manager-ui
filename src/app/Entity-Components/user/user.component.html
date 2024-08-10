@@ -1,0 +1,33 @@
+<div class="user-container">
+  <h2 *ngIf="!showForm">Users</h2>
+  <div *ngIf="!showForm" class="user-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.userId }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button (click)="editUser(user)">Edit</button>
+            <button (click)="deleteUser(user.userId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button *ngIf="!showForm" class="add-user-btn" (click)="showForm = !showForm">
+    Add User
+  </button>
+  <app-add-user *ngIf="showForm" (userAdded)="addUser()"></app-add-user>
+</div>

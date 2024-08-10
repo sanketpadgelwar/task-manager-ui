@@ -1,0 +1,253 @@
+/* Global Styles */
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container for the user section */
+.user-container {
+  margin-top: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: margin-left 0.3s ease;
+}
+
+/* Heading */
+.user-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+/* Scrollable list of users */
+.user-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 5px solid #007bff;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 5px; /* Add space between rows */
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  color: #333;
+}
+
+table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  flex: 1; /* Make table headers flexible */
+  box-sizing: border-box;
+}
+
+table tr {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 5px; /* Add margin to separate rows */
+  border-left: 5px solid #007bff;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+table thead tr {
+  background-color: transparent; /* Keep header row background separate from data rows */
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  font-weight: 600;
+}
+
+table td {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Actions buttons */
+table button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+table button:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+table button:first-child {
+  background-color: #ffc107;
+  color: #333;
+  margin-right: 5px;
+}
+
+table button:last-child {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Button to show form */
+.add-user-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.add-user-btn:hover {
+  background-color: #043596;
+  font-size: 18px;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #007bff;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .user-container {
+    margin: 20px;
+  }
+
+  .user-list {
+    padding: 15px;
+  }
+
+  form {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-container {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .user-list {
+    padding: 10px;
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  .add-user-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  table th,
+  table td {
+    padding: 8px;
+  }
+
+  table button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-container {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .user-list {
+    padding: 8px;
+  }
+
+  form {
+    padding: 8px;
+  }
+
+  .add-user-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  table th,
+  table td {
+    padding: 6px;
+  }
+
+  table button {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+}

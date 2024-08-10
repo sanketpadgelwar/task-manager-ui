@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../project.service';
-import { TaskService } from '../task.service';
-import { UserService } from '../user.service';
-import { ProjectDTO } from '../dto/project.dto';
-import { TaskDTO } from '../dto/task.dto';
-import { UserDTO } from '../dto/user.dto';
+import { ProjectService } from '../../project.service';
+import { TaskService } from '../../task.service';
+import { UserService } from '../../user.service';
+import { ProjectDTO } from '../../dto/project.dto';
+import { TaskDTO } from '../../dto/task.dto';
+import { UserDTO } from '../../dto/user.dto';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -22,14 +22,21 @@ export class ProjectComponent implements OnInit {
   filteredTasks: TaskDTO[] = [];
   users: UserDTO[] = [];
   filteredUsers: UserDTO[] = [];
-
+  manager: string[] = [];
   selectedPriority: string = '';
   selectedStatus: string = '';
   selectedUserFilter: string = 'userId';
   userFilterValue: string = '';
 
   taskPriorities: string[] = ['High', 'Medium', 'Low'];
-  taskStatuses: string[] = ['Not Started', 'In Progress', 'Completed'];
+  taskStatuses: string[] = [
+    'BACKLOG',
+    'ANALYSIS_WIP',
+    'DEVELOPMENT_WIP',
+    'TESTING_WIP',
+    'PRODUCTION_ACCEPTANCE',
+    'DEFFECT_RAISED',
+  ];
 
   constructor(
     private projectService: ProjectService,
@@ -45,6 +52,15 @@ export class ProjectComponent implements OnInit {
     this.projectService.getAllProjects().subscribe(
       (data) => {
         this.projects = data;
+        var i = 0;
+        for(const project of this.projects){
+          this.userService.getUserById(project.managerId).subscribe(
+            (data)=>{
+                this.manager[project.projectId] = data.username;
+            }
+          )
+          i++;
+        }
       },
       (error) => {
         console.error('Error fetching Projects', error);
@@ -90,11 +106,13 @@ export class ProjectComponent implements OnInit {
 
   filterTasks(): void {
     this.filteredTasks = this.tasks.filter((task) => {
-      return (
-        (this.selectedPriority === '' ||
-          task.priority === this.selectedPriority) &&
-        (this.selectedStatus === '' || task.status === this.selectedStatus)
-      );
+      const priorityMatch =
+        this.selectedPriority === '' ||
+        task.priority.toLowerCase() === this.selectedPriority.toLowerCase();
+      const statusMatch =
+        this.selectedStatus === '' ||
+        task.status.toLowerCase() === this.selectedStatus.toLowerCase();
+      return priorityMatch && statusMatch;
     });
   }
 
