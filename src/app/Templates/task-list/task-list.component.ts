@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TaskDTO } from '../../dto/task.dto';
+import { TaskDTO } from '../../Functions/dto/task.dto';
 import { TaskService } from '../../task.service';
 import { CommonModule } from '@angular/common';
 

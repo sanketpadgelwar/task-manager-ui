@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../project.service';
 import { TaskService } from '../../task.service';
 import { UserService } from '../../user.service';
-import { ProjectDTO } from '../../dto/project.dto';
-import { TaskDTO } from '../../dto/task.dto';
-import { UserDTO } from '../../dto/user.dto';
+import { ProjectDTO } from '../../Functions/dto/project.dto';
+import { TaskDTO } from '../../Functions/dto/task.dto';
+import { UserDTO } from '../../Functions/dto/user.dto';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -53,12 +53,10 @@ export class ProjectComponent implements OnInit {
       (data) => {
         this.projects = data;
         var i = 0;
-        for(const project of this.projects){
-          this.userService.getUserById(project.managerId).subscribe(
-            (data)=>{
-                this.manager[project.projectId] = data.username;
-            }
-          )
+        for (const project of this.projects) {
+          this.userService.getUserById(project.managerId).subscribe((data) => {
+            this.manager[project.projectId] = data.username;
+          });
           i++;
         }
       },

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ProjectDTO } from '../../dto/project.dto';
+import { ProjectDTO } from '../../Functions/dto/project.dto';
 import { ProjectService } from '../../project.service';
-import { TaskDTO } from '../../dto/task.dto';
+import { TaskDTO } from '../../Functions/dto/task.dto';
 import { TaskService } from '../../task.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

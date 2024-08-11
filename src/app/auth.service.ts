@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './user.service';
-import { UserDTO } from './dto/user.dto';
+import { UserDTO } from './Functions/dto/user.dto';
 
 @Injectable({
   providedIn: 'root',

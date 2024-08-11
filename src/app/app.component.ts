@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SidepanelComponent } from './sidepanel/sidepanel.component';
-import { DashboardComponent } from './admin-dashboard/dashboard.component';
+import { SidepanelComponent } from './sidepanel-components/sidepanel/sidepanel.component';
+import { DashboardComponent } from './Dashboard-Components/admin-dashboard/dashboard.component';
 import { ProjectComponent } from './Entity-Components/project/project.component';
 import { NavbarComponent } from './navbar/navbar.component';
 

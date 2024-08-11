@@ -14,7 +14,7 @@
             <p>Description: {{ project.description }}</p>
             <p>Start Date: {{ project.startDate }}</p>
             <p>End Date: {{ project.endDate }}</p>
-            <p>Manager : {{manager[project.projectId]}}</p>
+            <p>Manager : {{ manager[project.projectId] }}</p>
           </div>
         </div>
       </div>
@@ -23,8 +23,9 @@
     <!-- Project Details -->
     <div *ngIf="selectedProject" class="project-details-container">
       <div class="project-details">
-        <h2>Project Details: {{ selectedProject?.projectName }}</h2>
         <button (click)="deselectProject()">Back to Projects</button>
+        <h2>Project Details: {{ selectedProject?.projectName }}</h2>
+
         <div class="project-info">
           <p>
             <strong>Description:</strong> {{ selectedProject?.description }}

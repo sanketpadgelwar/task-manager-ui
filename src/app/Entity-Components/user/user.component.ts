@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDTO } from '../../dto/user.dto';
+import { UserDTO } from '../../Functions/dto/user.dto';
 import { UserService } from '../../user.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

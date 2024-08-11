@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectDTO } from '../dto/project.dto';
-import { TaskDTO } from '../dto/task.dto';
-import { UserDTO } from '../dto/user.dto';
+import { ProjectDTO } from '../Functions/dto/project.dto';
+import { TaskDTO } from '../Functions/dto/task.dto';
+import { UserDTO } from '../Functions/dto/user.dto';
 import { ProjectService } from '../project.service';
 import { TaskService } from '../task.service';
 import { UserService } from '../user.service';

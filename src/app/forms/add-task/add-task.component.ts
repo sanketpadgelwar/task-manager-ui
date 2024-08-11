@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskService } from '../../task.service';
-import { TaskDTO } from '../../dto/task.dto';
+import { TaskDTO } from '../../Functions/dto/task.dto';
 import {
   FormBuilder,
   FormGroup,
@@ -10,8 +10,8 @@ import {
 } from '@angular/forms';
 import { ProjectService } from '../../project.service'; // Import ProjectService
 import { UserService } from '../../user.service'; // Import UserService
-import { ProjectDTO } from '../../dto/project.dto'; // Import ProjectDTO
-import { UserDTO } from '../../dto/user.dto'; // Import UserDTO
+import { ProjectDTO } from '../../Functions/dto/project.dto'; // Import ProjectDTO
+import { UserDTO } from '../../Functions/dto/user.dto'; // Import UserDTO
 import { CommonModule } from '@angular/common';
 
 @Component({

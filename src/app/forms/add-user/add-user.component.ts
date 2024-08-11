@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { UserDTO } from '../../dto/user.dto';
+import { UserDTO } from '../../Functions/dto/user.dto';
 
 @Component({
   selector: 'app-add-user',

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TaskDTO } from './dto/task.dto';
-import { UserDTO } from './dto/user.dto';
+import { TaskDTO } from './Functions/dto/task.dto';
+import { UserDTO } from './Functions/dto/user.dto';
 
 @Injectable({
   providedIn: 'root',

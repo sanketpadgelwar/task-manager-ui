@@ -3,9 +3,9 @@ import { ProjectService } from '../../project.service';
 import { TaskService } from '../../task.service';
 import { UserService } from '../../user.service';
 import { Router } from '@angular/router';
-import { ProjectDTO } from '../../dto/project.dto';
-import { TaskDTO } from '../../dto/task.dto';
-import { UserDTO } from '../../dto/user.dto';
+import { ProjectDTO } from '../../Functions/dto/project.dto';
+import { TaskDTO } from '../../Functions/dto/task.dto';
+import { UserDTO } from '../../Functions/dto/user.dto';
 import { CommonModule } from '@angular/common';
 
 @Component({

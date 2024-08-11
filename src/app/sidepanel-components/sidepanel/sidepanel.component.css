@@ -46,7 +46,15 @@
   background: #043596;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+.panel-icon {
+  color: #007bff;
+}
+.tab:hover .panel-icon{
+  color: white;
+}
+.tab.active .panel-icon{
+  color: white;
+}
 .profile {
   display: flex;
   align-items: center;

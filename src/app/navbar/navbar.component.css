@@ -52,6 +52,9 @@
   transform: scale(1.1);
   border-radius: 4px;
 }
+.navbar-icon {
+  color: #007bff;
+}
 
 .notification-icon {
   font-size: 24px;
