@@ -6,6 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserDTO } from '../../Functions/dto/user.dto';
+import { UserService } from '../../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-user',
@@ -18,7 +20,11 @@ export class AddUserComponent {
   @Output() userAdded = new EventEmitter<UserDTO>();
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {
     this.userForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -29,8 +35,19 @@ export class AddUserComponent {
 
   onSubmit(): void {
     if (this.userForm.valid) {
-      this.userAdded.emit(this.userForm.value);
-      this.userForm.reset();
+      const user: UserDTO = this.userForm.value;
+      this.userService.createUser(user).subscribe(() => {
+        console.log('Project created:', user.username);
+        this.router.navigate(['/user']);
+      });
+    } else {
+      console.log('Form is not valid' + this.userForm.value);
     }
+    // if (this.userForm.valid) {
+    //   console.log(this.userForm.value);
+    //   // this.userService.createUser(this.userForm.value);
+    //   this.userAdded.emit(this.userForm.value);
+    //   this.userForm.reset();
+    // }
   }
 }

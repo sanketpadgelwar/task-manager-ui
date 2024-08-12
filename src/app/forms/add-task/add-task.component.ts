@@ -28,7 +28,7 @@ export class AddTaskComponent implements OnInit {
     description: '',
     status: '',
     priority: '',
-    deadline: '',
+    deadline: new Date(),
     projectId: 0,
     assignedUserId: 0,
     lastUpdatedOn: new Date(),

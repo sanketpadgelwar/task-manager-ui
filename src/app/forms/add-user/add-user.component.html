@@ -66,14 +66,12 @@
             </label>
           </span>
         </div>
-        <input
-          type="text"
-          id="role"
-          formControlName="role"
-          class="form-control"
-          required
-          placeholder="Role"
-        />
+        <select id="role" formControlName="role" class="form-control" required>
+          <option value="">Select Role</option>
+          <option value="ADMIN">ADMIN</option>
+          <option value="PROJECT_MANAGER">PROJECT_MANAGER</option>
+          <option value="TASK_ASSIGNEE">TASK_ASSIGNEE</option>
+        </select>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">

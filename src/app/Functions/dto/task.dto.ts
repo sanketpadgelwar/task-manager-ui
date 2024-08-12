@@ -4,7 +4,7 @@ export interface TaskDTO {
   description: string;
   status: string;
   priority: string;
-  deadline: string;
+  deadline: Date;
   projectId: number;
   lastUpdatedOn: Date;
   assignedUserId: number;

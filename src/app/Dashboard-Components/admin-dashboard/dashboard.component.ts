@@ -5,6 +5,7 @@ import { LastActivityComponent } from '../../Templates/last-activity/last-activi
 import { ProgressBarComponent } from '../../Templates/progress-bar/progress-bar.component';
 import { TaskListComponent } from '../../Templates/task-list/task-list.component';
 import { IntroComponent } from '../../Templates/intro/intro.component';
+import { CalendarComponent } from '../../sidepanel-components/calendar/calendar.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +17,7 @@ import { IntroComponent } from '../../Templates/intro/intro.component';
     ProgressBarComponent,
     TaskListComponent,
     IntroComponent,
+    CalendarComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],

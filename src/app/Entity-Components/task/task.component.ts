@@ -27,11 +27,11 @@ export class TaskComponent implements OnInit {
     status: '',
     priority: '',
     lastUpdatedOn: new Date(),
-    deadline: '',
+    deadline: new Date(),
     projectId: 0,
     assignedUserId: 0,
   };
-  deadlineDate: string | undefined;
+  deadlineDate: Date = new Date();
   showForm: boolean = false;
 
   constructor(
@@ -72,8 +72,8 @@ export class TaskComponent implements OnInit {
 
   addTask(): void {
     // Combine date and time inputs into LocalDateTime string
-    const deadline = `${this.deadlineDate}`;
-    this.newTask.deadline = deadline;
+    // const deadline = `${this.deadlineDate}`;
+    this.newTask.deadline = this.deadlineDate;
 
     // Convert selected project and user IDs to numbers
     this.newTask.projectId = +this.newTask.projectId;
@@ -88,12 +88,12 @@ export class TaskComponent implements OnInit {
         description: '',
         status: '',
         priority: '',
-        deadline: '',
+        deadline: new Date(),
         lastUpdatedOn: new Date(),
         projectId: 0,
         assignedUserId: 0,
       };
-      this.deadlineDate = '';
+      this.deadlineDate = new Date();
       this.showForm = false;
     });
   }
