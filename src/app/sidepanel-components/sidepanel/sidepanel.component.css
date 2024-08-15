@@ -49,10 +49,10 @@
 .panel-icon {
   color: #007bff;
 }
-.tab:hover .panel-icon{
+.tab:hover .panel-icon:hover {
   color: white;
 }
-.tab.active .panel-icon{
+.tab.active .panel-icon {
   color: white;
 }
 .profile {

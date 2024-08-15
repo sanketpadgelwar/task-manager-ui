@@ -55,8 +55,6 @@
   height: 40px;
   line-height: 40px;
   text-align: center;
-  /* border: 1px solid #ccc;
-  border-radius: 5px; */
   margin: 2px;
   font-weight: bold;
 }
@@ -65,8 +63,6 @@
   width: 90px;
   height: 50px;
   text-align: center;
-  /* border: 1px solid #ccc;
-  border-radius: 5px; */
   margin: 2px;
   cursor: pointer;
   position: relative;
@@ -83,18 +79,20 @@
 }
 
 .date-title {
-  /* restrict word to 4 to 5  */
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  max-width: 90px;
 }
 
 .empty {
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 .weekday {
@@ -107,10 +105,90 @@
 
 .has-event {
   background-color: #ffeb3b;
-  /* border: 1px solid #ffc107; */
 }
 
 .event {
   background-color: #06923c;
   color: white;
+}
+
+/* Responsive styles for screens up to 1024px */
+@media (max-width: 1024px) {
+  .calendar {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .weekdays,
+  .calendar-week div {
+    width: 60px;
+    height: 50px;
+    font-size: 12px;
+  }
+
+  .nav-button {
+    padding: 7px 15px;
+    font-size: 14px;
+  }
+
+  .month-year {
+    font-size: 20px;
+  }
+  .date-title {
+    font-size: 10px;
+  }
+}
+
+/* Responsive styles for screens up to 768px */
+@media (max-width: 768px) {
+  .calendar {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .weekdays,
+  .calendar-week div {
+    width: 40px;
+    height: 40px;
+    font-size: 10px;
+  }
+
+  .nav-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .month-year {
+    font-size: 18px;
+  }
+  .date-title {
+    font-size: 8px;
+  }
+}
+
+/* Responsive styles for screens up to 480px */
+@media (max-width: 480px) {
+  .calendar {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .weekdays,
+  .calendar-week div {
+    width: 30px;
+    height: 30px;
+    font-size: 8px;
+  }
+
+  .nav-button {
+    padding: 3px 5px;
+    font-size: 10px;
+  }
+
+  .month-year {
+    font-size: 14px;
+  }
+  .date-title {
+    font-size: 8px;
+  }
 }

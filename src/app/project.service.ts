@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProjectDTO } from './Functions/dto/project.dto';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectService {
-  private apiUrl = 'http://localhost:9090/t-manager/api/projects';
+  private apiUrl = environment.apiUrl + 'projects';
 
   constructor(private http: HttpClient) {}
 

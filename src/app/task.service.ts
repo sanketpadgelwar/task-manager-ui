@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TaskDTO } from './Functions/dto/task.dto';
 import { UserDTO } from './Functions/dto/user.dto';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:9090/t-manager/api/tasks';
+  private apiUrl = environment.apiUrl + 'tasks';
 
   constructor(private http: HttpClient) {}
 
