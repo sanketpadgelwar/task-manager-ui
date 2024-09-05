@@ -5,6 +5,8 @@ import { SidepanelComponent } from './sidepanel-components/sidepanel/sidepanel.c
 import { DashboardComponent } from './Dashboard-Components/admin-dashboard/dashboard.component';
 import { ProjectComponent } from './Entity-Components/project/project.component';
 import { NavbarComponent } from './navbar/navbar.component';
+// import { AuthService } from './auth.service';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',

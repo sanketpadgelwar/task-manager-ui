@@ -14,9 +14,12 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AddUserComponent } from './forms/add-user/add-user.component';
 import { TaskComponent } from './Entity-Components/task/task.component';
 import { LastActivityComponent } from './Templates/last-activity/last-activity.component';
-
+// import { SignInComponent } from './sign-in/sign-in.component';
+import { PmDashboardComponent } from './Dashboard-Components/pm-dashboard/pm-dashboard.component';
+import { UserDashboardComponent } from './Dashboard-Components/user-dashboard/user-dashboard.component';
+// import { AuthGuard } from './auth.guard';
 export const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'task', component: TaskComponent },
   { path: 'user', component: UserComponent },
