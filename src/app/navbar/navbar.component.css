@@ -1,0 +1,102 @@
+/* Base Styles (for larger screens, like laptops) */
+.navbar {
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #e1e4e8;
+  width: calc(100% - 20px); /* Adjust width based on margins */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribute space between items */
+  position: fixed;
+  top: 0;
+  left: 10px;
+  height: 60px; /* Set navbar height */
+  z-index: 1; /* Ensure it stays above other content */
+}
+
+.navbar .logo {
+  width: 150px; /* Adjust logo width */
+  height: auto;
+  margin-left: 20px;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-grow: 1; /* Allow search wrapper to grow */
+  justify-content: center; /* Center the search bar */
+  margin: 0 20px; /* Space between search bar and icons */
+}
+
+.search-input {
+  width: 600px;
+  height: 30px;
+}
+
+.notification-icon {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+/* Tablet (up to 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    width: calc(100% - 20px); /* Adjust width for smaller screens */
+    padding: 0 10px; /* Add padding for responsiveness */
+    left: 0; /* Remove left margin */
+    justify-content: space-between; /* Adjust alignment for smaller screens */
+  }
+
+  .navbar .logo {
+    width: 120px; /* Adjust logo size */
+    margin-left: 10px; /* Reduce margin */
+  }
+
+  .search-wrapper {
+    flex-grow: 0; /* Prevent search wrapper from growing */
+    margin: 0; /* Remove horizontal margins */
+  }
+
+  .search-input {
+    width: 250px; /* Adjust width for smaller screens */
+    height: 25px; /* Adjust height */
+    font-size: 14px; /* Adjust font size */
+  }
+
+  .notification-icon {
+    font-size: 20px; /* Reduce icon size */
+    margin-right: 15px; /* Reduce margin */
+  }
+}
+
+/* Smartphone (up to 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    width: 100%; /* Full width for very small screens */
+    padding: 0 5px; /* Add padding for very small screens */
+    left: 0; /* No left margin */
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Adjust height for stacked items */
+  }
+
+  .navbar .logo {
+    width: 100px; /* Adjust logo size */
+    margin-left: 5px; /* Reduce margin */
+  }
+
+  .search-wrapper {
+    width: 100%; /* Full width for search wrapper */
+    margin-top: 10px; /* Space between logo and search */
+  }
+
+  .search-input {
+    width: calc(100% - 40px); /* Adjust width considering margins/padding */
+    height: 30px; /* Adjust height */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .notification-icon {
+    font-size: 18px; /* Further reduce icon size */
+    margin: 10px 0; /* Adjust margins for vertical layout */
+  }
+}

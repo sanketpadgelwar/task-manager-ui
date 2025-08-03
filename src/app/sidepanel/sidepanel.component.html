@@ -1,0 +1,70 @@
+<div class="side-panel">
+  <div class="tabs">
+    <div
+      class="tab"
+      (click)="navigateTo('dashboard')"
+      [class.active]="activeTab === 'dashboard'"
+    >
+      <i class="fas fa-home"></i> Dashboard
+    </div>
+    <div
+      class="tab"
+      (click)="navigateTo('project')"
+      [class.active]="activeTab === 'project'"
+    >
+      <i class="fas fa-project-diagram"></i> Project
+    </div>
+    <div
+      class="tab"
+      (click)="navigateTo('activity')"
+      [class.active]="activeTab === 'activity'"
+    >
+      <i class="fas fa-tachometer-alt"></i> Activity
+    </div>
+    <div
+      class="tab"
+      (click)="navigateTo('messages')"
+      [class.active]="activeTab === 'messages'"
+    >
+      <i class="fas fa-envelope"></i> Messages
+    </div>
+    <div
+      class="tab"
+      (click)="navigateTo('members')"
+      [class.active]="activeTab === 'members'"
+    >
+      <i class="fas fa-users"></i> Members
+    </div>
+    <div
+      class="tab"
+      (click)="navigateTo('calendar')"
+      [class.active]="activeTab === 'calendar'"
+    >
+      <i class="fas fa-calendar-alt"></i> Calendar
+    </div>
+    <div
+      class="tab"
+      (click)="navigateTo('settings')"
+      [class.active]="activeTab === 'settings'"
+    >
+      <i class="fas fa-cogs"></i> Settings
+    </div>
+    <div
+      class="tab"
+      (click)="navigateTo('update')"
+      [class.active]="activeTab === 'update'"
+    >
+      <i class="fas fa-rocket"></i> New Update
+    </div>
+  </div>
+
+  <div class="profile">
+    <img src="/assets/profile.jpg" class="profile-image" alt="Profile Image" />
+    <div class="profile-info">
+      <div class="profile-name">John Doe</div>
+      <div class="profile-position">Developer</div>
+    </div>
+  </div>
+
+  <!-- <button class="toggle-button">Toggle Theme</button> -->
+</div>

@@ -1,0 +1,66 @@
+html,
+body {
+  background: #f8f9fa;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column; /* Stack navbar and main content vertically */
+  height: 100%;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1; /* Ensure navbar is above other content */
+}
+
+.sidepanel {
+  position: fixed;
+  top: 65px; /* Start below the navbar */
+  left: 0;
+  /* width: 200px; */
+  background-color: #f4f4f4;
+  height: calc(100% - 60px); /* Adjust height based on navbar */
+  overflow-y: auto;
+  z-index: 1; /* Ensure sidebar is above other content */
+}
+
+.main-content {
+  margin-top: 60px; /* Assuming your navbar height is 60px */
+  margin-left: 170px; /* Space for the sidebar */
+  padding: 20px;
+  width: calc(100% - 220px); /* Adjust width based on sidebar width */
+  height: calc(100% - 60px); /* Full height minus the navbar height */
+  overflow-y: auto;
+  background: #f8f9fa; /* Background color to match the content area */
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    top: 60px;
+    margin-left: 150px; /* Adjust margin for sidebar */
+    width: calc(100% - 180px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    top: 60px;
+    margin-left: 150px; /* Adjust margin for sidebar */
+    width: calc(100% - 150px);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    top: 500px;
+    margin-left: 120px; /* Adjust margin for sidebar */
+    width: calc(100% - 155px);
+  }
+}
