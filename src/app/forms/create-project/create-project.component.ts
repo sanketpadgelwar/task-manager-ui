@@ -8,14 +8,14 @@ import {
 } from '@angular/forms';
 import { ProjectService } from '../../project.service';
 import { UserService } from '../../user.service';
-import { UserDTO } from '../../Functions/dto/user.dto';
-import { ProjectDTO } from '../../Functions/dto/project.dto';
+import { UserDTO } from '../../dto/user.dto';
+import { ProjectDTO } from '../../dto/project.dto';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-project',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './create-project.component.html',
   styleUrls: ['./create-project.component.css'],
 })
@@ -32,8 +32,8 @@ export class CreateProjectComponent implements OnInit {
     this.createProjectForm = this.fb.group({
       projectName: ['', Validators.required],
       description: ['', Validators.required],
-      startDate: [new Date(), Validators.required],
-      endDate: [new Date(), Validators.required],
+      startDate: ['', Validators.required],
+      endDate: ['', Validators.required],
       managerId: [null, Validators.required],
     });
   }

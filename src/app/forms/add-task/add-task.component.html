@@ -2,90 +2,67 @@
   <h2>Add Task</h2>
   <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="taskName">
-        <i class="fas fa-tasks task-icon"></i> Task Name
-      </label>
+      <label for="taskName">Task Name</label>
       <input
         id="taskName"
         formControlName="taskName"
         type="text"
         class="form-control"
-        placeholder="Task Name"
       />
     </div>
     <div class="form-group">
-      <label for="description">
-        <i class="fas fa-align-left task-icon"></i> Description
-      </label>
+      <label for="description">Description</label>
       <textarea
         id="description"
         formControlName="description"
         class="form-control"
-        placeholder="Description"
       ></textarea>
     </div>
     <div class="form-group">
-      <label for="status">
-        <i class="fas fa-clipboard-check task-icon"></i> Status
-      </label>
+      <label for="status">Status</label>
       <select id="status" formControlName="status" class="form-control">
-        <option value="" disabled selected>Status</option>
         <option *ngFor="let status of statusOptions" [value]="status">
           {{ status }}
         </option>
       </select>
     </div>
     <div class="form-group">
-      <label for="priority">
-        <i class="fas fa-exclamation-triangle task-icon"></i> Priority
-      </label>
+      <label for="priority">Priority</label>
       <select id="priority" formControlName="priority" class="form-control">
-        <option value="" disabled selected>Priority</option>
         <option *ngFor="let priority of priorityOptions" [value]="priority">
           {{ priority }}
         </option>
       </select>
     </div>
     <div class="form-group">
-      <label for="deadline">
-        <i class="fas fa-calendar-alt task-icon"></i> Deadline
-      </label>
+      <label for="deadline">Deadline</label>
       <input
         id="deadline"
         formControlName="deadline"
         type="date"
         class="form-control"
-        placeholder="Deadline"
       />
     </div>
     <div class="form-group">
-      <label for="projectId">
-        <i class="fas fa-project-diagram task-icon"></i> Project
-      </label>
+      <label for="projectId">Project ID</label>
       <select id="projectId" formControlName="projectId" class="form-control">
-        <option value="" disabled selected>Project</option>
         <option *ngFor="let project of projects" [value]="project.projectId">
           {{ project.projectName }}
         </option>
       </select>
     </div>
     <div class="form-group">
-      <label for="assignedUserId">
-        <i class="fas fa-user task-icon"></i> Assign To Employee
-      </label>
+      <label for="assignedUserId">Assigned User ID</label>
       <select
         id="assignedUserId"
         formControlName="assignedUserId"
         class="form-control"
       >
-        <option value="" disabled selected>Assign To Employee</option>
         <option *ngFor="let user of users" [value]="user.userId">
           {{ user.username }}
         </option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary">
-      <i class="fas fa-plus task-submit-icon" style="color: white"></i> Add Task
-    </button>
+    <button type="submit" class="btn btn-primary">Add Task</button>
   </form>
 </div>

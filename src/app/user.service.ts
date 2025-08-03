@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UserDTO } from './Functions/dto/user.dto';
-import { environment } from '../environments/environment';
+import { UserDTO } from './dto/user.dto';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = environment.apiUrl + 'users';
+  private apiUrl = 'http://localhost:9090/t-manager/api/users';
 
   getUserByUserName(userName: string) {
     return this.http.get<UserDTO>(`${this.apiUrl}/userName/${userName}`);

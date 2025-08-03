@@ -11,9 +11,6 @@
 .form-group {
   margin-bottom: 15px;
 }
-h2 {
-  color: #007bff;
-}
 .form-group label {
   display: block;
   margin-bottom: 5px;
@@ -28,15 +25,12 @@ h2 {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-.task-icon {
-  color: #007bff;
-}
 .btn {
   padding: 10px 15px;
   margin-bottom: 5px;
   border: none;
   border-radius: 5px;
-  background: #007bff;
+  background: #1803a3;
   color: white;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -46,6 +40,6 @@ h2 {
 }
 
 .btn:hover {
-  background: #1803a3;
-  transform: scale(1.1);
+  background: #0e02f9;
+  transform: scale(1.05);
 }

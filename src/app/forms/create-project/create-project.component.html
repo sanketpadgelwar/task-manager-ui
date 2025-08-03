@@ -2,95 +2,48 @@
   <h2>Create Project</h2>
   <form [formGroup]="createProjectForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"
-            ><label for="projectName"
-              ><i class="fas fa-project-diagram project-icon"></i> Project Name</label
-            ></span
-          >
-        </div>
-        <input
-          id="projectName"
-          formControlName="projectName"
-          type="text"
-          class="form-control"
-          placeholder="Project Name"
-        />
-      </div>
+      <label for="projectName">Project Name</label>
+      <input
+        id="projectName"
+        formControlName="projectName"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"
-            ><label for="description"
-              ><i class="fas fa-align-left project-icon"></i> Description</label
-            ></span
-          >
-        </div>
-        <textarea
-          id="description"
-          formControlName="description"
-          class="form-control"
-          placeholder="Description"
-        ></textarea>
-      </div>
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        class="form-control"
+      ></textarea>
     </div>
     <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"
-            ><label for="startDate"
-              ><i class="fas fa-calendar-alt project-icon"></i> Start Date</label
-            ></span
-          >
-        </div>
-        <input
-          id="startDate"
-          formControlName="startDate"
-          type="date"
-          class="form-control"
-          placeholder="Start Date"
-        />
-      </div>
+      <label for="startDate">Start Date</label>
+      <input
+        id="startDate"
+        formControlName="startDate"
+        type="date"
+        class="form-control"
+      />
     </div>
     <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"
-            ><label for="endDate"
-              ><i class="fas fa-calendar-alt project-icon"></i> End Date</label
-            ></span
-          >
-        </div>
-        <input
-          id="endDate"
-          formControlName="endDate"
-          type="date"
-          class="form-control"
-          placeholder="End Date"
-        />
-      </div>
+      <label for="endDate">End Date</label>
+      <input
+        id="endDate"
+        formControlName="endDate"
+        type="date"
+        class="form-control"
+      />
     </div>
     <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"
-            ><label for="managerId"
-              ><i class="fas fa-user-tie project-icon"></i> Manager</label
-            ></span
-          >
-        </div>
-        <select id="managerId" formControlName="managerId" class="form-control">
-          <option value="" disabled selected>Manager</option>
-          <option *ngFor="let manager of managers" [value]="manager.userId">
-            {{ manager.username }}
-          </option>
-        </select>
-      </div>
+      <label for="managerId">Manager ID</label>
+      <select id="managerId" formControlName="managerId" class="form-control">
+        <option *ngFor="let manager of managers" [value]="manager.userId">
+          {{ manager.username }}
+        </option>
+      </select>
     </div>
-    <button type="submit" class="btn btn-primary">
-      <i class="fas fa-plus " style="color: white;"></i> Create Project
-    </button>
+    <button type="submit" class="btn btn-primary">Create Project</button>
   </form>
 </div>

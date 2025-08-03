@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TaskDTO } from './Functions/dto/task.dto';
-import { UserDTO } from './Functions/dto/user.dto';
-import { environment } from '../environments/environment';
+import { TaskDTO } from './dto/task.dto';
+import { UserDTO } from './dto/user.dto';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = environment.apiUrl + 'tasks';
+  private apiUrl = 'http://localhost:9090/t-manager/api/tasks';
 
   constructor(private http: HttpClient) {}
 

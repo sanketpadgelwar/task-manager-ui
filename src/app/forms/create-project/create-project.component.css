@@ -34,18 +34,12 @@
   resize: vertical;
   min-height: 100px;
 }
-h2 {
-  color: #007bff;
-}
-.project-icon {
-  color: #007bff;
-}
 .btn {
   padding: 12px 20px;
   margin-bottom: 15px;
   border: none;
   border-radius: 5px;
-  background: #007bff;
+  background: #1803a3;
   color: white;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -56,7 +50,7 @@ h2 {
 }
 
 .btn:hover {
-  background: #1803a3;
+  background: #0e02f9;
   transform: scale(1.05);
 }
 
