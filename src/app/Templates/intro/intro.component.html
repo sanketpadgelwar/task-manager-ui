@@ -1,0 +1,17 @@
+<div class="header">
+  <!-- Conditional display based on screen size -->
+  <h1 *ngIf="isLargeScreen">Welcome,</h1>
+  <h2 *ngIf="!isLargeScreen && isMediumScreen">Welcome,</h2>
+  <h3 *ngIf="!isLargeScreen && !isMediumScreen">Welcome,</h3>
+
+  <!-- <div class="quick-actions">
+    <button (click)="navigateTo('add-task')">Add Task</button>
+    <button (click)="navigateTo('create-project')">Create Project</button>
+  </div> -->
+</div>
+
+<div class="overview-cards">
+  <div class="card">Total Tasks: {{ task_Count }}</div>
+  <div class="card">Projects: {{ project_Count }}</div>
+  <div class="card">Team Members: {{ user_Count }}</div>
+</div>

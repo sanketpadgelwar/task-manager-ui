@@ -1,0 +1,16 @@
+<!-- last-activities.component.html -->
+
+<div class="last-activities-container">
+  <h2>Last Activities</h2>
+  <div class="last-activities-list">
+    <ul>
+      <li *ngFor="let activity of activities">
+        <span class="task-name">{{ activity.taskName }}</span> -
+        <span class="task-updated"
+          >Last updated on: {{ activity.lastUpdatedOn }}</span
+        >
+        <!-- activity.lastUpdatedOn | date : "short"  -->
+      </li>
+    </ul>
+  </div>
+</div>

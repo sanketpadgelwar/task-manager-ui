@@ -1,0 +1,69 @@
+.container-fluid {
+  padding-top: 80px; /* Add top padding to avoid content being hidden behind the fixed header */
+}
+
+.scrollable {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.list-group-item {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #f0f0f0;
+}
+
+.details h2,
+.details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.details p {
+  margin: 5px 0;
+}
+
+.details ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details ul li {
+  margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-top: 80px;
+  }
+
+  .details {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-header h2,
+  .details h2,
+  .details h3 {
+    font-size: 1rem;
+  }
+
+  .list-group-item {
+    padding: 8px;
+  }
+
+  .details {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="task-container">
+  <h2 *ngIf="!showForm">Tasks</h2>
+
+  <!-- Scrollable div to display tasks -->
+  <div *ngIf="!showForm" class="task-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Task Name</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Deadline</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.taskId }}</td>
+          <td>{{ task.taskName }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.deadline }}</td>
+          <td>
+            <button (click)="editTask(task)">Edit</button>
+            <button (click)="deleteTask(task.taskId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Button to show add task form -->
+  <button *ngIf="!showForm" class="add-task-btn" (click)="showForm = !showForm">
+    Add Task
+  </button>
+
+  <!-- Form to add new task -->
+  <app-add-task *ngIf="showForm" (ngSubmit)="addTask()"></app-add-task>
+</div>

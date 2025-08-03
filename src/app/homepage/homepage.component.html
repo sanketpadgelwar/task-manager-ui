@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <h2>Projects</h2>
+        </div>
+        <div class="card-body scrollable">
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              *ngFor="let project of projects"
+              (click)="showProjectDetails(project)"
+            >
+              <p><strong>Project Name:</strong> {{ project.projectName }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <h2>Managers</h2>
+        </div>
+        <div class="card-body scrollable">
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              *ngFor="let manager of managersList"
+              (click)="showManagerDetails(manager)"
+            >
+              <p><strong>Username:</strong> {{ manager.username }}</p>
+              <p><strong>Email:</strong> {{ manager.email }}</p>
+              <p><strong>Role:</strong> {{ manager.role }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3" *ngIf="selectedProject">
+      <div class="card">
+        <div class="card-header">
+          <h2>Project Details</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>Project Name:</strong> {{ selectedProject.projectName }}
+          </p>
+          <p><strong>Description:</strong> {{ selectedProject.description }}</p>
+          <p><strong>Start Date:</strong> {{ selectedProject.startDate }}</p>
+          <p><strong>End Date:</strong> {{ selectedProject.endDate }}</p>
+          <div class="details" *ngIf="selectedProjectsManager">
+            <h3>Manager Details</h3>
+            <p><strong>Name:</strong> {{ selectedProjectsManager.username }}</p>
+            <p><strong>Email:</strong> {{ selectedProjectsManager.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3" *ngIf="selectedUser">
+      <div class="card">
+        <div class="card-header">
+          <h2>Manager Details</h2>
+        </div>
+        <div class="card-body">
+          <p><strong>Username:</strong> {{ selectedUser.username }}</p>
+          <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+          <p><strong>Role:</strong> {{ selectedUser.role }}</p>
+          <div class="details" *ngIf="selectedUsersProject">
+            <h3>Projects Assigned</h3>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item"
+                *ngFor="let project of selectedUsersProject"
+              >
+                <p><strong>Project Name:</strong> {{ project.projectName }}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

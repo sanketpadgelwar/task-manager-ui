@@ -1,0 +1,175 @@
+.side-panel {
+  font-family: "Lato", sans-serif;
+  width: 150px;
+  background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #e1e4e8;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: fixed;
+  top: 65px; /* Start below the navbar */
+  left: 0;
+  height: calc(100% - 80px); /* Adjust height based on navbar */
+  z-index: 1; /* Ensure it stays above other content */
+}
+
+.tabs {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab i {
+  font-size: 20px;
+  margin-right: 8px;
+}
+.tab.active {
+  background: #007bff; /* Highlight color */
+  color: #fcfdfd; /* Text color for active tab */
+  font-weight: bold; /* Font weight for active tab */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for emphasis */
+}
+
+.tab:hover {
+  transform: scale(1.1);
+  font-weight: bold;
+  color: #fcfdfd;
+  background: #043596;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.panel-icon {
+  color: #007bff;
+}
+.tab:hover .panel-icon:hover {
+  color: white;
+}
+.tab.active .panel-icon {
+  color: white;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #e1e4e8;
+  background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+  transition: background-color 0.3s ease;
+}
+
+.profile:hover {
+  background-color: #f1f3f5;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  margin-right: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: bold;
+  color: #343a40;
+}
+
+.profile-position {
+  color: #6c757d;
+}
+
+.toggle-button {
+  padding: 10px 15px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  align-self: center;
+}
+
+.toggle-button:hover {
+  background: #1803a3;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .side-panel {
+    width: 180px;
+    top: 65px; /* Adjust for smaller screens */
+    height: calc(100% - 65px);
+  }
+
+  .profile-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .tab {
+    padding: 8px;
+  }
+
+  .toggle-button {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-panel {
+    width: 150px;
+    top: 60px; /* Adjust for smaller screens */
+    height: calc(100% - 70px);
+  }
+
+  .profile-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tab {
+    padding: 6px;
+  }
+
+  .toggle-button {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .side-panel {
+    width: 120px;
+    top: 130px; /* Remove fixed top for smaller screens */
+    height: calc(100% - 145px); /* Adjust height */
+  }
+
+  .profile-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tab {
+    padding: 4px;
+    font-size: 0.8em;
+  }
+
+  .toggle-button {
+    padding: 4px 8px;
+    font-size: 0.8em;
+  }
+}

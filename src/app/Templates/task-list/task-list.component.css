@@ -1,0 +1,25 @@
+.task-list {
+  background-color: #ffffff;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 2px solid #111;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.project-card {
+  background-color: #f8f9fa;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3,
+.project-card p {
+  margin: 5px 0;
+}
